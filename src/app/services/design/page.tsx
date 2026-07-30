@@ -5,8 +5,8 @@ import { Container } from "../../../components/Container";
 import { FaPalette, FaPenRuler, FaMobileScreen, FaImage } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Graphic Design — Professional Design Services | Fastmedia24",
-  description: "Professional graphic design services including branding, print, digital, and UI/UX design.",
+  title: "Design | TFA Studios",
+  description: "Brand identity, visual systems, motion graphics, and print that make ideas tangible.",
 };
 
 const services = [
@@ -58,7 +58,7 @@ export default function DesignPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/30 mb-6">
               <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-              <span className="text-sm text-violet-400 font-medium">Graphic Design</span>
+              <span className="text-sm text-violet-400 font-medium">Design</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight">

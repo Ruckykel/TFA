@@ -4,7 +4,7 @@ import { Container } from "../../components/Container";
 
 const testimonials = [
   {
-    quote: "Fastmedia24 captured our wedding perfectly — the video still makes me tear up!",
+    quote: "TFA Studios captured our wedding perfectly — the video still makes me tear up!",
     author: "Anita & Chuka",
     role: "Wedding Clients",
   },

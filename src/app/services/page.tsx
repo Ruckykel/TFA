@@ -8,8 +8,8 @@ import { Why } from "../../components/home/Why";
 import { Featured } from "../../components/home/Featured";
 
 export const metadata: Metadata = {
-  title: "Services — Fastmedia24",
-  description: "Explore all creative services: event coverage, rentals, design, editing, and web.",
+  title: "Services — TFA Studios",
+  description: "Explore all creative services: Video & Film Production, Photography, Design, Creative Direction & Marketing.",
 };
 
 export default function ServicesPage() {
@@ -27,10 +27,10 @@ export default function ServicesPage() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {servicesList.slice(0, 4).map((s, idx) => {
               const slugMap: Record<string, string> = {
-                "Digital Media Production & Content Creation": "/services/digital-media",
-                "Branding & Creative Design": "/services/branding",
-                "Digital Marketing & Social Strategy": "/services/marketing",
-                "Web & Interactive Experiences": "/services/web",
+                "Video & Film Production": "/services/video-film",
+                "Photography": "/services/photography",
+                "Design": "/services/design",
+                "Creative Direction & Marketing": "/services/creative-direction",
               };
               const href = slugMap[s.title] ?? s.href;
               const img = idx % 2 === 0 ? "/sample1.webp" : "/sample2.webp";

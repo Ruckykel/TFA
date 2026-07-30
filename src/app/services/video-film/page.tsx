@@ -5,8 +5,8 @@ import { Container } from "../../../components/Container";
 import { FaPlay, FaCamera, FaMicrophone, FaFilm } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Digital Media Production — Video, Photo & Audio | Fastmedia24",
-  description: "Professional video production, photography, and audio content creation.",
+  title: "Video & Film Production | TFA Studios",
+  description: "Professional video and film production, commercial ads, and documentary filmmaking.",
 };
 
 const services = [
@@ -67,7 +67,7 @@ export default function DigitalMediaPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
-              <span className="text-sm text-[#00F0FF] font-medium">Digital Media Production</span>
+              <span className="text-sm text-[#00F0FF] font-medium">Video & Film Production</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
@@ -123,7 +123,7 @@ export default function DigitalMediaPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-[#00F0FF] font-semibold text-sm tracking-wider uppercase">What We Offer</p>
             <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
-              Full-Spectrum Media Production
+              Cinematic Storytelling
             </h2>
             <p className="mt-4 text-white/70">
               Everything you need to create compelling visual and audio content that resonates with your audience.

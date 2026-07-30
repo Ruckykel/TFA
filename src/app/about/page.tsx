@@ -7,8 +7,8 @@ import { Team } from "../../components/about/Team";
 import { AboutCTA } from "../../components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About — Fastmedia24",
-  description: "About Fastmedia24 — creative studio for photo, video, design, and web.",
+  title: "About — TFA Studios",
+  description: "About TFA Studios — creative agency for video & film, photography, design, and marketing.",
 };
 
 export default function AboutPage() {

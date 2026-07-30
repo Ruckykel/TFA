@@ -4,60 +4,43 @@ import Link from "next/link";
 import React, { useMemo, useState, useRef, useCallback } from "react";
 import { Container } from "../../components/Container";
 
-const websites = [
-  { title: "Rekruuter", href: "https://rekruuter.com/landing", img: "/rekruuter.png", tag: "Website" },
-  { title: "Eduboosta", href: "https://eduboosta.com/", img: "/eduboosta.png", tag: "Website" },
-  { title: "Easymovezone", href: "https://easymovezone.com/", img: "/easymovezone.png", tag: "Website" },
-  { title: "Informnaija", href: "https://informnaija.com/", img: "/informnaija.png", tag: "Website" },
-  { title: "Standex Digital", href: "https://standexdigital.com/", img: "/standex.png", tag: "Website" },
-  { title: "BoxOutAfrica", href: "https://www.boxoutafrica.com/", img: "/boxoutafrica.png", tag: "Website" },
-  { title: "Convivia 24", href: "https://convivia24.com/", img: "/convivia24.png", tag: "Website" },
-  { title: "AccurateCV", href: "https://accuratecv.com/", img: "/accuratecv.png", tag: "Website" },
-  { title: "SkilledJobsLive", href: "https://skilledjobslive.com/", img: "/skilledjobslive.png", tag: "Website" },
+const videoFilm = [
+  { title: "Mara Mania", href: "https://youtu.be/N2t_YyIgiQ8", img: "https://img.youtube.com/vi/N2t_YyIgiQ8/maxresdefault.jpg", tag: "Documentary" },
+  { title: "Sounds Of Nollywood", href: "https://youtu.be/CDJulHBPYxE", img: "https://img.youtube.com/vi/CDJulHBPYxE/maxresdefault.jpg", tag: "Documentary" },
+  { title: "GOOGLE", href: "https://youtu.be/8fiNlWEeQuI", img: "https://img.youtube.com/vi/8fiNlWEeQuI/maxresdefault.jpg", tag: "Campaign" },
+  { title: "Uber", href: "https://youtu.be/VXY2kKBuDcA", img: "https://img.youtube.com/vi/VXY2kKBuDcA/maxresdefault.jpg", tag: "Commercial" },
+  { title: "DELYORKE", href: "https://youtu.be/2q6PZJUGeKc", img: "https://img.youtube.com/vi/2q6PZJUGeKc/maxresdefault.jpg", tag: "Campaign" },
 ];
 
-// Media & Content categories (videography/photography coverage)
-const mediaContent = [
-  { title: "Wedding Coverage", href: "/portfolio", img: "/sample1.webp", tag: "Media" },
-  { title: "Birthday Events", href: "/portfolio", img: "/sample2.webp", tag: "Media" },
-  { title: "Corporate Events", href: "/portfolio", img: "/sample1.webp", tag: "Media" },
-  { title: "Product Shoots", href: "/portfolio", img: "/sample2.webp", tag: "Media" },
-  { title: "Commercial Ads", href: "/portfolio", img: "/sample1.webp", tag: "Media" },
-  { title: "Documentary", href: "/portfolio", img: "/sample2.webp", tag: "Media" },
-  { title: "Music Videos", href: "/portfolio", img: "/sample1.webp", tag: "Media" },
+const photography = [
+  { title: "Editorial Shoot", href: "#", img: "/sample2.webp", tag: "Photography" },
+  { title: "Product Campaign", href: "#", img: "/sample1.webp", tag: "Photography" },
+  { title: "Event Coverage", href: "#", img: "/sample2.webp", tag: "Photography" },
+  { title: "Lifestyle Portraits", href: "#", img: "/sample1.webp", tag: "Photography" },
 ];
 
-// Graphics/Product Design categories
-const graphicsDesign = [
-  { title: "Album Cover Art", href: "/portfolio", img: "/sample2.webp", tag: "Graphics" },
-  { title: "Flyers & Posters", href: "/portfolio", img: "/sample1.webp", tag: "Graphics" },
-  { title: "Social Media Posters", href: "/portfolio", img: "/sample2.webp", tag: "Graphics" },
-  { title: "Infographics", href: "/portfolio", img: "/sample1.webp", tag: "Graphics" },
-  { title: "UI/UX Design", href: "/portfolio", img: "/sample2.webp", tag: "Graphics" },
-  { title: "Brand Identity", href: "/portfolio", img: "/sample1.webp", tag: "Graphics" },
-  { title: "Product Mockups", href: "/portfolio", img: "/sample2.webp", tag: "Graphics" },
+const design = [
+  { title: "Brand Identity", href: "#", img: "/sample1.webp", tag: "Design" },
+  { title: "UI/UX Design", href: "#", img: "/sample2.webp", tag: "Design" },
+  { title: "Motion Graphics", href: "#", img: "/sample1.webp", tag: "Design" },
+  { title: "Print Collateral", href: "#", img: "/sample2.webp", tag: "Design" },
 ];
 
-// Video Editing categories
-const videoEditing = [
-  { title: "Content Reels", href: "/portfolio", img: "/sample1.webp", tag: "Video" },
-  { title: "Ads Editing", href: "/portfolio", img: "/sample2.webp", tag: "Video" },
-  { title: "Animation Flyers", href: "/portfolio", img: "/sample1.webp", tag: "Video" },
-  { title: "Motion Graphics", href: "/portfolio", img: "/sample2.webp", tag: "Video" },
-  { title: "Color Grading", href: "/portfolio", img: "/sample1.webp", tag: "Video" },
-  { title: "Short Films", href: "/portfolio", img: "/sample2.webp", tag: "Video" },
-  { title: "YouTube Editing", href: "/portfolio", img: "/sample1.webp", tag: "Video" },
+const marketing = [
+  { title: "Social Campaign", href: "#", img: "/sample2.webp", tag: "Marketing" },
+  { title: "Content Strategy", href: "#", img: "/sample1.webp", tag: "Marketing" },
+  { title: "Brand Activation", href: "#", img: "/sample2.webp", tag: "Marketing" },
 ];
 
 export function Featured() {
   const tabs = useMemo(() => [
-    { key: "web", label: "Websites", items: websites },
-    { key: "media", label: "Media & Content", items: mediaContent },
-    { key: "design", label: "Graphics/Product Design", items: graphicsDesign },
-    { key: "video", label: "Video Editing", items: videoEditing },
+    { key: "video", label: "Video & Film Production", items: videoFilm },
+    { key: "photography", label: "Photography", items: photography },
+    { key: "design", label: "Design", items: design },
+    { key: "marketing", label: "Creative Direction & Marketing", items: marketing },
   ], []);
-  const [active, setActive] = useState("web");
-  const activeItems = tabs.find(t => t.key === active)?.items ?? websites;
+  const [active, setActive] = useState("video");
+  const activeItems = tabs.find(t => t.key === active)?.items ?? videoFilm;
   const listRef = useRef<HTMLDivElement>(null);
   const scrollByViewport = useCallback((direction: "prev" | "next") => {
     const el = listRef.current;
@@ -69,15 +52,11 @@ export function Featured() {
   // Accent function removed (no colored borders needed)
 
   const websiteDesc: Record<string, string> = {
-    Rekruuter: "AI hiring assistant platform",
-    Eduboosta: "Learning platform site",
-    Easymovezone: "Career and job opportunity platform",
-    Informnaija: "Nigeria information and services platform",
-    "Standex Digital": "Digital solutions platform",
-    BoxOutAfrica: "Funding platform for African innovation",
-    "Convivia 24": "Event and experiences portal",
-    AccurateCV: "Professional CV builder platform",
-    SkilledJobsLive: "Global career & visa sponsorship platform",
+    "Mara Mania": "Exploring the sound of Lagos' underground Mara movement.",
+    "Sounds Of Nollywood": "Spotlighting the sonic storytellers shaping Nollywood.",
+    "GOOGLE": "A promotional campaign featuring Layi Wasabi.",
+    "Uber": "A narrative-driven commercial campaign created for Uber.",
+    "DELYORKE": "Highlighting the experiences of Del-York Creative Academy participants."
   };
 
   return (

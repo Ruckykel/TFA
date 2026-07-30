@@ -2,6 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // Allow external images
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+    ],
     // Next.js will auto-convert to these formats when the browser supports them
     formats: ["image/avif", "image/webp"],
     // Optimized device width breakpoints for responsive images

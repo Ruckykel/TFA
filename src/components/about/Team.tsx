@@ -76,7 +76,7 @@ export function Team() {
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-[11px] tracking-widest text-white/60">MEET OUR TEAM</p>
           <h2 className="mt-2 text-3xl md:text-4xl font-extrabold">The Creative Minds Behind the Magic</h2>
-          <p className="mt-2 text-sm md:text-base text-white/70">A team of creators, strategists, designers, and developers — united by a love for storytelling and innovation. We bring diverse skills and bold perspectives to every project, ensuring Fastmedia24 delivers work that feels fresh, dynamic, and distinctly you.</p>
+          <p className="mt-2 text-sm md:text-base text-white/70">A team of creators, strategists, designers, and developers — united by a love for storytelling and innovation. We bring diverse skills and bold perspectives to every project, ensuring TFA Studios delivers work that feels fresh, dynamic, and distinctly you.</p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

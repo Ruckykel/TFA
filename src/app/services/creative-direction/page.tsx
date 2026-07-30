@@ -5,8 +5,8 @@ import { Container } from "../../../components/Container";
 import { FaPalette, FaPenNib, FaMobileScreen, FaArrowsRotate } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Branding & Creative Design — Fastmedia24",
-  description: "Strategic brand identity, visual design, and creative solutions that make your brand unforgettable.",
+  title: "Creative Direction & Marketing | TFA Studios",
+  description: "Strategy, concept development, art direction, and campaign planning that unify every element of your brand story.",
 };
 
 const services = [
@@ -64,13 +64,13 @@ export default function BrandingPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 mb-6">
               <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-              <span className="text-sm text-purple-400 font-medium">Branding & Design</span>
+              <span className="text-sm text-purple-400 font-medium">Creative Direction & Marketing</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
               Design That{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-                Defines & Connects
+                Aligns & Connects
               </span>
             </h1>
 
@@ -105,7 +105,7 @@ export default function BrandingPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-purple-400 font-semibold text-sm tracking-wider uppercase">Our Services</p>
             <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
-              Comprehensive Branding Solutions
+              Comprehensive Creative Solutions
             </h2>
             <p className="mt-4 text-white/70">
               From logo design to complete brand transformations, we create visual experiences that go beyond beauty.
@@ -185,7 +185,7 @@ export default function BrandingPage() {
                 href="/contact#contact-form"
                 className="mt-8 inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-lg hover:brightness-110 transition-all shadow-[0_0_40px_rgba(168,85,247,0.4)]"
               >
-                Start Your Branding Journey
+                Start Your Marketing Journey
               </Link>
             </div>
           </div>

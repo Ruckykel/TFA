@@ -26,7 +26,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                     email: formData.email,
                     subject: formData.subject || "New Contact Form Submission",
                     message: formData.message,
-                    from_name: "Fastmedia24 Website",
+                    from_name: "TFA Studios Website",
                 }),
             });
 

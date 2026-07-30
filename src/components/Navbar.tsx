@@ -13,10 +13,10 @@ const navItems = [
 ];
 
 const serviceLinks = [
-  { label: "Digital Media Production & Content Creation", href: "/services/digital-media" },
-  { label: "Branding & Creative Design", href: "/services/branding" },
-  { label: "Digital Marketing & Social Strategy", href: "/services/marketing" },
-  { label: "Web & Interactive Experiences", href: "/services/web" },
+  { label: "Video & Film Production", href: "/services/video-film" },
+  { label: "Photography", href: "/services/photography" },
+  { label: "Design", href: "/services/design" },
+  { label: "Creative Direction & Marketing", href: "/services/creative-direction" },
 ];
 
 export function Navbar() {
@@ -46,7 +46,7 @@ export function Navbar() {
           <div className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[#00F0FF]/6 blur-md" aria-hidden="true" />
           <div className="flex items-center justify-between rounded-full border border-white/10 bg-white/5 backdrop-blur supports-[backdrop-filter]:backdrop-blur px-3 py-2 ring-1 ring-[#00F0FF]/10 shadow-[0_0_10px_rgba(0,240,255,0.08)]">
             <Link href="/" className="flex items-center gap-2 pl-1">
-              <Image src="/mediaverse.png" alt="Fastmedia24" width={140} height={28} priority />
+              <Image src="/TFA.png" alt="TFA Studios" width={140} height={40} className="w-auto h-8 md:h-10 object-contain" priority />
             </Link>
 
             {/* Desktop nav */}

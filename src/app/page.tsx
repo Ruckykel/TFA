@@ -8,9 +8,9 @@ import { Partners } from "../components/home/Partners";
 import { Stats } from "../components/home/Stats";
 
 export const metadata: Metadata = {
-  title: "Fastmedia24 — Where Vision Meets Digital Reality",
+  title: "TFA Studios — Creative Agency & Media Production",
   description:
-    "Fastmedia24 is a full-scale creative and digital production company helping brands, creators, and businesses tell powerful stories through visuals, design, and technology.",
+    "TFA Studios is a creative agency and media production house built on vision, precision, and the belief that great work changes everything.",
 };
 
 export default function Home() {

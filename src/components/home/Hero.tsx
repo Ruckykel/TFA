@@ -37,10 +37,10 @@ export function Hero() {
           {/* Copy left — centered on mobile */}
           <div className="max-w-3xl text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-text">
-              Where Vision Meets <span className="text-[#00F0FF]">Digital Reality</span>
+              We craft stories that <span className="text-[#00F0FF]">move people.</span>
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted mx-auto lg:mx-0 max-w-xl">
-              Fastmedia24 is a full-scale creative and digital production company helping brands, creators, and businesses tell powerful stories through visuals, design, and technology.
+              TFA Studios is a creative agency and media production house built on vision, precision, and the belief that great work changes everything.
             </p>
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
               <Button href="#works" variant="ghost" className="!bg-[#00F0FF] !text-black hover:brightness-110 focus-visible:ring-[#00F0FF] group gap-2">
@@ -88,7 +88,7 @@ export function Hero() {
             </div>
 
             {/* Services pager: single row of two cards */}
-            <ul role="list" aria-label="Fastmedia24 services" className="mt-2 md:mt-3 grid grid-cols-2 w-full gap-3 pb-4 md:pb-6">
+            <ul role="list" aria-label="TFA Studios services" className="mt-2 md:mt-3 grid grid-cols-2 w-full gap-3 pb-4 md:pb-6">
               {visibleServices.map((s) => (
                 <li key={s.title}>
                   <Link href={s.href} className="group block h-[130px] w-full rounded-xl border border-white/10 bg-white/5 p-4 shadow-card backdrop-blur-md transition-all hover:border-white/20 ring-1 ring-[#00F0FF]/10 hover:ring-[#00F0FF]/30 shadow-[0_0_24px_rgba(0,240,255,0.10)] hover:shadow-[0_0_32px_rgba(0,240,255,0.18)]">
