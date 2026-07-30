@@ -142,7 +142,7 @@ export default function PhotographyPage() {
 
             <div className="relative z-10 p-6 py-10 md:p-20 text-center">
               <h2 className="text-3xl md:text-5xl font-extrabold">
-                Let's Capture{" "}
+                Let&apos;s Capture{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Your Story</span>
               </h2>
               <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
