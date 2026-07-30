@@ -13,6 +13,7 @@ export function AboutHero() {
           <div className="text-center max-w-3xl mx-auto">
             <p className="text-[11px] tracking-widest text-white/60">ABOUT US</p>
             <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight">The Future of Digital Creativity, Built Today.</h1>
+            <p className="mt-4 text-sm md:text-base text-white/70 max-w-2xl mx-auto">
               At TFA Studios, we believe that creativity thrives at the intersection of imagination and innovation. We&apos;re a multidisciplinary creative agency creating timeless brand stories through design, film, and strategy.
             </p>
             <div className="mt-6">
