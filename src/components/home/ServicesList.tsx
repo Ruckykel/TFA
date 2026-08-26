@@ -17,20 +17,27 @@ export function ServicesList() {
   return (
     <section className="py-16 md:py-24" aria-labelledby="services-heading">
       <div className="container-wide">
-        {/* Heading left, bracketed note right */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-center md:gap-16">
-          <h2 id="services-heading" className="headline text-5xl md:text-6xl">
-            <span className="font-light text-mauve">What </span>
-            <span className="font-bold text-accent">we do</span>
+        {/* Heading left, note right */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-center md:gap-16">
+          <h2
+            id="services-heading"
+            className="headline max-w-lg text-4xl md:text-5xl lg:text-6xl"
+          >
+            <span className="font-light text-mauve">Every story </span>
+            <span className="font-bold text-accent">needs the right hands</span>
           </h2>
 
-          <p className="relative max-w-xs self-center px-4 py-3 text-center text-[11px] uppercase leading-relaxed tracking-[0.1em] text-muted">
-            <span aria-hidden="true" className="absolute left-0 top-0 h-2.5 w-2.5 border-l border-t border-accent" />
-            <span aria-hidden="true" className="absolute right-0 top-0 h-2.5 w-2.5 border-r border-t border-accent" />
-            <span aria-hidden="true" className="absolute bottom-0 left-0 h-2.5 w-2.5 border-b border-l border-accent" />
-            <span aria-hidden="true" className="absolute bottom-0 right-0 h-2.5 w-2.5 border-b border-r border-accent" />
-            {home.services.note}
-          </p>
+          {/* Stacked colour rules instead of corner brackets */}
+          <div className="max-w-xs self-center md:self-end md:pb-2">
+            <span aria-hidden="true" className="mb-4 flex gap-1">
+              <span className="h-1.5 w-8 bg-accent" />
+              <span className="h-1.5 w-4 bg-custard" />
+              <span className="h-1.5 w-2 bg-mauve" />
+            </span>
+            <p className="text-[11px] uppercase leading-relaxed tracking-[0.15em] text-muted">
+              {home.services.note}
+            </p>
+          </div>
         </div>
 
         {/* Square blocks */}

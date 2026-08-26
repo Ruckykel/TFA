@@ -48,7 +48,7 @@ export const home = {
     eyebrow: "What We Do",
     title: "Every Story Needs the Right Hands.",
     /** Small bracketed line, top right of the section. */
-    note: "Elevate your brand and tell your stories the right way",
+    note: "Four disciplines. One studio. From first idea to final frame.",
     items: [
       {
         title: "Film & Video Production",
