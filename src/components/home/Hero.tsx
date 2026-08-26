@@ -5,7 +5,7 @@ import { home } from "../../data/copy";
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[84vh] items-center pt-28 pb-16 md:min-h-[90vh]"
+      className="relative flex items-center pt-24 pb-10 md:min-h-[90vh] md:pt-28 md:pb-16"
       aria-label="Introduction"
     >
       <div className="container-wide text-center">
@@ -21,7 +21,7 @@ export function Hero() {
         </h1>
 
         <p
-          className="rise-in mx-auto mt-10 max-w-2xl text-base leading-relaxed text-muted md:text-lg"
+          className="rise-in mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted md:mt-10 md:text-lg"
           style={{ animationDelay: "260ms" }}
         >
           {home.hero.intro}

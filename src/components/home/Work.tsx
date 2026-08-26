@@ -40,7 +40,7 @@ export function Work() {
   }));
 
   return (
-    <section id="work" className="py-16 md:py-24" aria-labelledby="work-heading">
+    <section id="work" className="pt-8 pb-14 md:py-24" aria-labelledby="work-heading">
       <div className="container-wide">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-16">
           <div>
