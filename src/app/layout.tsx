@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Jost, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ContactModalProvider } from "../components/ContactModalContext";
 import { NavigationProgress } from "../components/NavigationProgress";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* Futura stand-in — geometric, single-storey 'a'. Swap for licensed Futura
+   by replacing this with next/font/local; --font-jost is the only hook. */
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const garamond = EB_Garamond({
+  variable: "--font-garamond",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -24,13 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${jost.variable} ${garamond.variable} antialiased`}>
         <ContactModalProvider>
           <NavigationProgress />
-          <div className="app-gradient" />
           <Navbar />
           {children}
           <Footer />

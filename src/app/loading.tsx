@@ -16,8 +16,8 @@ export default function Loading() {
                     width: 48,
                     height: 48,
                     borderRadius: "50%",
-                    border: "3px solid rgba(255,255,255,0.08)",
-                    borderTopColor: "var(--accent, #4af0d5)",
+                    border: "3px solid rgba(0,0,0,0.10)",
+                    borderTopColor: "var(--color-accent)",
                     animation: "spin 0.7s linear infinite",
                 }}
             />
@@ -25,7 +25,7 @@ export default function Loading() {
             <p
                 style={{
                     fontSize: "0.85rem",
-                    color: "rgba(255,255,255,0.4)",
+                    color: "var(--color-muted)",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                 }}

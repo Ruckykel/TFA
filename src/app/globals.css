@@ -1,33 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  /* Dark theme palette (more black, less blue) */
-  --color-bg: 5 7 11;
-  /* #05070B */
-  --color-text: 229 231 235;
-  /* gray-200 */
-  --color-muted: 156 163 175;
-  /* gray-400 */
-  --color-brand: 0 240 255;
-  /* #00F0FF */
-  --color-accent: 0 240 255;
-  /* electric blue accent */
+@theme {
+  /* ---- Base: white & black ---- */
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-muted: #525252;
 
-  /* Surfaces */
-  --color-elevated: 12 16 24;
-  /* deeper near-black */
-  --color-border: 36 44 60;
-  /* darker border */
+  /* ---- Brand palette ---- */
+  --color-accent: #fa6903;
+  /* Orange — the functional colour: buttons, links, hovers */
+  --color-brand: #fa6903;
+  --color-custard: #eddf82;
+  --color-mauve: #c78db6;
+  --color-cream: #ffbe50;
 
-  /* Radii */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-full: 9999px;
+  /* ---- Surfaces ---- */
+  --color-elevated: #f5f5f5;
+  --color-border: #e2e2e2;
 
-  /* Shadows */
-  --shadow-card: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-  --shadow-elevated: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  /* ---- Type ---- */
+  --font-display: var(--font-jost), Futura, "Century Gothic", system-ui, sans-serif;
+  --font-serif: var(--font-garamond), "EB Garamond", Garamond, serif;
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 24px 60px -20px rgba(0, 0, 0, 0.18);
 }
 
 html,
@@ -36,18 +33,37 @@ body {
 }
 
 body {
-  background-color: rgb(var(--color-bg));
-  color: rgb(var(--color-text));
+  background-color: var(--color-bg);
+  color: var(--color-text);
   overflow-x: hidden;
+  font-family: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
 }
 
-/* Utilities matching Socialander feel */
+/* Geometric display face (Futura stand-in) */
+.font-display {
+  font-family: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
+}
+
+/* Garamond — used for editorial / long-form accents */
+.font-serif-editorial {
+  font-family: var(--font-garamond), "EB Garamond", Garamond, "Times New Roman", serif;
+}
+
+/* Tight, poster-like headline treatment */
+.headline {
+  font-family: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
 .container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -76,42 +92,21 @@ body {
 
 @media (min-width: 1536px) {
   .container {
-    max-width: 1280px;
+    max-width: 1360px;
   }
 }
 
-/* Unified blurred gradient background */
-.app-gradient {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(600px 600px at 10% 10%, rgba(14, 165, 233, 0.12), rgba(14, 165, 233, 0) 60%),
-    radial-gradient(500px 500px at 90% 20%, rgba(99, 102, 241, 0.10), rgba(99, 102, 241, 0) 60%),
-    radial-gradient(700px 700px at 50% 110%, rgba(56, 189, 248, 0.12), rgba(56, 189, 248, 0) 60%);
-  filter: blur(48px) saturate(110%);
-  will-change: transform;
+/* Full-bleed rail for the works mosaic */
+.container-wide {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1680px;
 }
 
-/* Navbar link heartbeat underline */
-@keyframes heartbeat-underline {
-  0% {
-    transform: scaleX(0);
-  }
-
-  50% {
-    transform: scaleX(1.08);
-  }
-
-  70% {
-    transform: scaleX(0.94);
-  }
-
-  100% {
-    transform: scaleX(1);
-  }
-}
-
+/* Navbar underline */
 .nav-link {
   position: relative;
 }
@@ -121,32 +116,21 @@ body {
   position: absolute;
   left: 0;
   bottom: -6px;
-  height: 2px;
+  height: 1px;
   width: 100%;
-  background-color: rgb(var(--color-accent));
+  background-color: var(--color-accent);
   transform-origin: left;
   transform: scaleX(0);
-  opacity: 0.9;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-link:hover::after,
 .nav-link:focus-visible::after {
-  animation: heartbeat-underline 320ms ease-out;
+  transform: scaleX(1);
 }
 
-/* Navbar CTA unique hover */
 .nav-cta {
-  transform: translateZ(0);
-  transition: transform 160ms ease, box-shadow 220ms ease, filter 160ms ease;
-}
-
-.nav-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px 0 rgb(var(--color-accent) / 0.28), inset 0 0 0 1px rgb(var(--color-accent) / 0.45);
-}
-
-.nav-cta:active {
-  transform: translateY(0);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 @keyframes marquee {
@@ -159,7 +143,6 @@ body {
   }
 }
 
-/* Contact modal animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -179,5 +162,34 @@ body {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* Entrance reveal for hero type */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: riseIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .rise-in,
+  [class*="animate-"] {
+    animation: none !important;
+  }
+
+  * {
+    scroll-behavior: auto !important;
   }
 }

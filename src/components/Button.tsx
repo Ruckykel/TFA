@@ -12,7 +12,7 @@ export function Button({ href, children, variant = "primary", className = "", ..
   const base = "inline-flex items-center justify-center rounded-full font-semibold transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-[1px]";
   const sizes = "px-5 py-3 text-sm";
   const variants: Record<string, string> = {
-    primary: "bg-accent text-white hover:brightness-110 focus-visible:ring-accent",
+    primary: "bg-accent text-text hover:brightness-110 focus-visible:ring-accent",
     secondary: "border border-border text-text hover:bg-elevated focus-visible:ring-accent",
     ghost: "text-text hover:bg-elevated",
   };

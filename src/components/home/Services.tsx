@@ -76,12 +76,12 @@ export function Services() {
             <p className="mt-2 text-muted text-base">We cover every dimension of creative production &mdash; from the initial concept to the final frame. Each discipline informs the others, giving every project a rare cohesion.</p>
           </div>
           <div className="mt-4 flex items-center gap-2">
-            <button aria-label="Previous service" onClick={goPrev} className="h-9 w-9 rounded-full border border-[#00F0FF]/50 bg-[#00F0FF]/10 text-[#00F0FF] hover:bg-[#00F0FF]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00F0FF] transition-colors">
+            <button aria-label="Previous service" onClick={goPrev} className="h-9 w-9 rounded-full border border-[#fa6903]/50 bg-[#fa6903]/10 text-[#fa6903] hover:bg-[#fa6903]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fa6903] transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mx-auto">
                 <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <button aria-label="Next service" onClick={goNext} className="h-9 w-9 rounded-full border border-[#00F0FF]/50 bg-[#00F0FF]/10 text-[#00F0FF] hover:bg-[#00F0FF]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00F0FF] transition-colors">
+            <button aria-label="Next service" onClick={goNext} className="h-9 w-9 rounded-full border border-[#fa6903]/50 bg-[#fa6903]/10 text-[#fa6903] hover:bg-[#fa6903]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fa6903] transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mx-auto">
                 <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -91,7 +91,7 @@ export function Services() {
           {/* Carousel item */}
           <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Left: media */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 ring-1 ring-[#00F0FF]/10 shadow-[0_0_24px_rgba(0,240,255,0.08)]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-border bg-elevated ring-1 ring-[#fa6903]/10 shadow-[0_0_24px_rgba(250,105,3,0.08)]">
               <Image src={index % 2 === 0 ? "/sample1.webp" : "/sample2.webp"} alt={current.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
             </div>
 
@@ -103,7 +103,7 @@ export function Services() {
               {/* Feature tabs */}
               <ul role="list" className="mt-6 space-y-3">
                 {featureItems.map((item, i) => (
-                  <li key={item.title} className="rounded-lg border border-white/10 bg-white/5">
+                  <li key={item.title} className="rounded-lg border border-border bg-elevated">
                     <button
                       type="button"
                       onClick={() => setExpanded((e) => (e === i ? -1 : i))}
@@ -111,7 +111,7 @@ export function Services() {
                       aria-expanded={expanded === i}
                     >
                       <span className="inline-flex items-center gap-2">
-                        <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#00F0FF] shadow-[0_0_12px_rgba(0,240,255,0.8)]" />
+                        <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#fa6903] shadow-[0_0_12px_rgba(250,105,3,0.8)]" />
                         <span className="text-sm font-semibold">{item.title}</span>
                       </span>
                       <svg
@@ -122,7 +122,7 @@ export function Services() {
                       </svg>
                     </button>
                     {expanded === i && (
-                      <div className="px-4 pb-4 text-sm text-white/70">
+                      <div className="px-4 pb-4 text-sm text-muted">
                         {item.desc}
                       </div>
                     )}
@@ -131,7 +131,7 @@ export function Services() {
               </ul>
 
               <div className="mt-6 flex justify-center md:justify-start">
-                <Link href="/services" className="inline-flex items-center rounded-full bg-[#00F0FF] px-4 py-2 text-sm font-semibold text-black hover:brightness-110">Learn More</Link>
+                <Link href="/services" className="inline-flex items-center rounded-full bg-[#fa6903] px-4 py-2 text-sm font-semibold text-black hover:brightness-110">Learn More</Link>
               </div>
             </div>
           </div>

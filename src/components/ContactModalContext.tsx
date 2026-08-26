@@ -65,7 +65,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                         {/* Close button */}
                         <button
                             onClick={closeContactModal}
-                            className="mb-3 ml-auto flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/20 hover:border-[#00F0FF]/40 transition-all group"
+                            className="mb-3 ml-auto flex items-center gap-2 rounded-full border border-border bg-elevated backdrop-blur-md px-4 py-2 text-sm font-medium text-muted hover:bg-elevated hover:border-[#fa6903]/40 transition-all group"
                             aria-label="Close contact form"
                         >
                             <span>Close</span>
@@ -84,15 +84,15 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                         </button>
 
                         {/* Form card with glassmorphism */}
-                        <div className="rounded-2xl border border-white/10 bg-[rgba(12,16,24,0.85)] backdrop-blur-xl shadow-[0_24px_80px_rgba(0,240,255,0.08),0_0_1px_rgba(255,255,255,0.1)] overflow-hidden">
+                        <div className="rounded-2xl border border-border bg-bg shadow-elevated overflow-hidden">
                             {/* Accent gradient top bar */}
-                            <div className="h-1 w-full bg-gradient-to-r from-[#00F0FF] via-[#6366F1] to-[#00F0FF]" />
+                            <div className="h-1 w-full bg-gradient-to-r from-[#fa6903] via-[#6366F1] to-[#fa6903]" />
 
                             <div className="p-6 md:p-8">
                                 <div className="text-center mb-6">
-                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/20 mb-3">
+                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#fa6903]/10 border border-[#fa6903]/20 mb-3">
                                         <svg
-                                            className="w-5 h-5 text-[#00F0FF]"
+                                            className="w-5 h-5 text-[#fa6903]"
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             stroke="currentColor"
@@ -104,8 +104,8 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                                             <polyline points="22,4 12,13 2,4" />
                                         </svg>
                                     </div>
-                                    <h2 className="text-xl font-extrabold text-white">Get in Touch</h2>
-                                    <p className="mt-1 text-sm text-white/60">
+                                    <h2 className="text-xl font-extrabold text-text">Get in Touch</h2>
+                                    <p className="mt-1 text-sm text-muted">
                                         We&apos;ll get back to you within 24 hours.
                                     </p>
                                 </div>

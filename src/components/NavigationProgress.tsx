@@ -95,8 +95,8 @@ function NavigationProgressBar() {
                 style={{
                     height: "100%",
                     width: `${progress}%`,
-                    background: "linear-gradient(90deg, #00F0FF, #00c4cc)",
-                    boxShadow: "0 0 12px rgba(0, 240, 255, 0.6), 0 0 4px rgba(0, 240, 255, 0.3)",
+                    background: "var(--color-accent)",
+                    boxShadow: "0 0 12px rgba(250, 105, 3, 0.6), 0 0 4px rgba(250, 105, 3, 0.3)",
                     transition: progress === 100
                         ? "width 200ms ease-out, opacity 300ms ease 200ms"
                         : "width 300ms ease-out",

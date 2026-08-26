@@ -1,26 +1,45 @@
 "use client";
 import React from "react";
-import { Container } from "../../components/Container";
-import { ContactButton } from "../../components/ContactButton";
+import { ContactButton } from "../ContactButton";
+import { home, studio } from "../../data/copy";
 
 export function CTA() {
   return (
-    <section className="py-12">
-      <Container>
-        <div className="relative text-center overflow-hidden rounded-2xl py-12 px-6">
-          {/* soft accent arcs; no dedicated background */}
-          <div className="pointer-events-none absolute -left-12 -top-12 h-40 w-40 md:h-56 md:w-56 rounded-full bg-[#00F0FF]/10 blur-3xl" aria-hidden="true" />
-          <div className="pointer-events-none absolute -right-12 -bottom-10 h-40 w-40 md:h-56 md:w-56 rounded-full bg-[#00F0FF]/10 blur-3xl" aria-hidden="true" />
+    <section className="py-20 md:py-32" aria-labelledby="cta-heading">
+      <div className="container-wide text-center">
+        <h2
+          id="cta-heading"
+          className="headline mx-auto max-w-4xl text-[clamp(2rem,6vw,5rem)]"
+        >
+          {home.cta.title}
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted">
+          {home.cta.body}
+        </p>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Let&apos;s Build Something Extraordinary</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm md:text-base text-white/70">
-            Whether it&apos;s a campaign, a rebrand, or a complete digital transformation — we&apos;re ready to bring your vision to life.
-          </p>
-          <ContactButton className="mt-6 inline-flex items-center justify-center rounded-full bg-[#00F0FF] px-6 py-3 text-sm font-semibold text-black shadow-[0_8px_24px_rgba(0,240,255,0.25)] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00F0FF]">
-            Get Started →
+        <div className="mt-12 flex flex-col items-center justify-center gap-8">
+          <ContactButton className="border-2 border-black bg-accent px-12 py-5 text-xs uppercase tracking-[0.2em] text-black transition-all hover:-translate-y-1 hover:bg-cream">
+            {home.cta.button}
           </ContactButton>
+
+          {/* Email set as a display line rather than a plain link */}
+          <a
+            href={`mailto:${studio.email}`}
+            className="group inline-flex flex-col items-center"
+          >
+            <span className="text-[10px] uppercase tracking-[0.3em] text-muted">
+              Or write to us
+            </span>
+            <span className="mt-2 font-serif-editorial text-2xl italic text-text decoration-accent decoration-2 underline-offset-8 transition-colors group-hover:text-accent group-hover:underline md:text-3xl">
+              {studio.email}
+            </span>
+            <span
+              aria-hidden="true"
+              className="mt-3 h-0.5 w-16 bg-accent transition-all duration-300 group-hover:w-28"
+            />
+          </a>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

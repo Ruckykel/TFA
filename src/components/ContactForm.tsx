@@ -44,23 +44,23 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
     };
 
     const wrapperClass = embedded
-        ? "rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 scroll-mt-24"
+        ? "rounded-2xl border border-border bg-elevated p-6 md:p-8 scroll-mt-24"
         : "";
 
     if (status === "success") {
         return (
             <div id="contact-form" className={wrapperClass}>
                 <div className="text-center py-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#00F0FF]/20 mb-4">
-                        <svg className="w-8 h-8 text-[#00F0FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#fa6903]/20 mb-4">
+                        <svg className="w-8 h-8 text-[#fa6903]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
-                    <h3 className="text-xl font-extrabold text-[#00F0FF]">Message Sent!</h3>
-                    <p className="mt-2 text-white/70">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
+                    <h3 className="text-xl font-extrabold text-[#fa6903]">Message Sent!</h3>
+                    <p className="mt-2 text-muted">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
                     <button
                         onClick={() => setStatus("idle")}
-                        className="mt-4 text-sm text-[#00F0FF] hover:underline"
+                        className="mt-4 text-sm text-[#fa6903] hover:underline"
                     >
                         Send another message
                     </button>
@@ -80,7 +80,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
-                        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF]/30 transition-colors placeholder:text-white/40"
+                        className="w-full rounded-lg border border-border bg-elevated px-4 py-3 text-sm outline-none focus:border-[#fa6903] focus:ring-1 focus:ring-[#fa6903]/30 transition-colors placeholder:text-muted"
                         placeholder="Full Name"
                     />
                 </div>
@@ -92,7 +92,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF]/30 transition-colors placeholder:text-white/40"
+                        className="w-full rounded-lg border border-border bg-elevated px-4 py-3 text-sm outline-none focus:border-[#fa6903] focus:ring-1 focus:ring-[#fa6903]/30 transition-colors placeholder:text-muted"
                         placeholder="Email Address"
                     />
                 </div>
@@ -102,7 +102,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                         name="subject"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF]/30 transition-colors text-white/70"
+                        className="w-full rounded-lg border border-border bg-elevated px-4 py-3 text-sm outline-none focus:border-[#fa6903] focus:ring-1 focus:ring-[#fa6903]/30 transition-colors text-text"
                     >
                         <option value="">Subject / Service Type</option>
                         <option value="Video Production">Video Production</option>
@@ -121,7 +121,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         required
                         rows={embedded ? 5 : 4}
-                        className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF]/30 transition-colors placeholder:text-white/40"
+                        className="w-full rounded-lg border border-border bg-elevated px-4 py-3 text-sm outline-none focus:border-[#fa6903] focus:ring-1 focus:ring-[#fa6903]/30 transition-colors placeholder:text-muted"
                         placeholder="Message"
                     />
                 </div>
@@ -133,7 +133,7 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                 <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-black hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#fa6903] px-5 py-3 text-sm font-semibold text-black hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                     {status === "loading" ? (
                         <>

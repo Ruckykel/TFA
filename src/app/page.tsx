@@ -1,29 +1,23 @@
 import type { Metadata } from "next";
 import { Hero } from "../components/home/Hero";
-import { Services } from "../components/home/Services";
-import { Featured } from "../components/home/Featured";
-import { Why } from "../components/home/Why";
+import { Work } from "../components/home/Work";
+import { AboutBlock } from "../components/home/AboutBlock";
+import { ServicesList } from "../components/home/ServicesList";
 import { CTA } from "../components/home/CTA";
-import { Partners } from "../components/home/Partners";
-import { Stats } from "../components/home/Stats";
 
 export const metadata: Metadata = {
-  title: "TFA Studios — Creative Agency & Media Production",
+  title: "TFA Studios — Connecting Hearts and Minds",
   description:
-    "TFA Studios is a creative agency and media production house built on vision, precision, and the belief that great work changes everything.",
+    "TFA Studios is a creative studio that uses film, photography, design, and creative strategy to tell stories, communicate ideas, and build brands.",
 };
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Why />
-      <Stats />
-      <section>
-        <Services />
-      </section>
-      <Featured />
-      <Partners />
+      <Work />
+      <AboutBlock />
+      <ServicesList />
       <CTA />
     </main>
   );
