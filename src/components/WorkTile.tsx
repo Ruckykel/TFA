@@ -116,7 +116,7 @@ export function WorkTile({
       target="_blank"
       rel="noopener noreferrer"
       className={`group block ${fill ? "h-full" : ""} ${className}`}
-      aria-label={`${work.title} — ${categoryLabels[work.category]}`}
+      aria-label={`${work.title}, ${categoryLabels[work.category]}`}
     >
       {media}
     </Link>

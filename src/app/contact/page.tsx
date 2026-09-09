@@ -3,7 +3,7 @@ import { ContactForm } from "../../components/ContactForm";
 import { contactPage, footer } from "../../data/copy";
 
 export const metadata: Metadata = {
-  title: "Start a Project — TFA Studios",
+  title: "Start a Project | TFA Studios",
   description: contactPage.intro,
 };
 

@@ -43,7 +43,7 @@ export function Services() {
   const featureItems = useMemo(() => {
     const m: Record<string, { title: string; desc: string }[]> = {
       "Video & Film Production": [
-        { title: "Cinematic visuals that tell a story", desc: "End‑to‑end production — scripting, directing, shooting, editing, and color." },
+        { title: "Cinematic visuals that tell a story", desc: "End‑to‑end production: scripting, directing, shooting, editing, and color." },
         { title: "Commercials & brand films", desc: "High-impact content for brands that want to be remembered." },
         { title: "Documentary & narrative", desc: "Real stories brought to life through world-class filmmaking." },
       ],
@@ -59,7 +59,7 @@ export function Services() {
       ],
       "Creative Direction & Marketing": [
         { title: "Strategy & concept development", desc: "Art direction and creative strategy that unify every element of your brand." },
-        { title: "Campaign planning & execution", desc: "From creatives to deployment and analytics — we close the loop." },
+        { title: "Campaign planning & execution", desc: "From creatives to deployment and analytics, we close the loop." },
         { title: "Social content & growth", desc: "Content calendars, social strategy, and marketing that drives real results." },
       ],
     };

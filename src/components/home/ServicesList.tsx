@@ -17,37 +17,27 @@ export function ServicesList() {
   return (
     <section className="py-16 md:py-24" aria-labelledby="services-heading">
       <div className="container-wide">
-        {/* Heading left, note right */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-center md:gap-16">
-          <h2
-            id="services-heading"
-            className="headline max-w-lg text-4xl md:text-5xl lg:text-6xl"
-          >
-            <span className="font-light text-mauve">Every story </span>
-            <span className="font-bold text-accent">needs the right hands</span>
+        <div className="text-center">
+          <h2 id="services-heading" className="headline flex items-center justify-center gap-3 text-4xl md:text-5xl">
+            <span aria-hidden="true" className="h-3 w-3 shrink-0 bg-accent" />
+            <span className="font-light text-mauve">What </span>
+            <span className="font-bold text-accent">we do</span>
           </h2>
-
-          {/* Stacked colour rules instead of corner brackets */}
-          <div className="max-w-xs self-center md:self-end md:pb-2">
-            <span aria-hidden="true" className="mb-4 flex gap-1">
-              <span className="h-1.5 w-8 bg-accent" />
-              <span className="h-1.5 w-4 bg-custard" />
-              <span className="h-1.5 w-2 bg-mauve" />
-            </span>
-            <p className="text-[11px] uppercase leading-relaxed tracking-[0.15em] text-muted">
-              {home.services.note}
-            </p>
-          </div>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+            {home.services.note}
+          </p>
         </div>
 
-        {/* Square blocks */}
+        {/* Square blocks. h-full on both the cell and the block: the grid row
+            stretches the <li>, but the block only matches that height if it is
+            also told to fill its own cell. */}
         <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 md:mt-16 md:gap-6">
           {home.services.items.map((s) => (
-            <li key={s.title}>
+            <li key={s.title} className="h-full">
               <LiveLink
                 href={s.href}
                 gated="text"
-                className={`flex min-h-[88px] items-center justify-center border-2 border-black px-8 py-6 text-center text-sm font-medium text-black transition-transform duration-300 hover:-translate-y-1 md:text-base ${
+                className={`flex h-full min-h-[96px] items-center justify-center border-2 border-black px-8 py-6 text-center text-sm font-medium text-black transition-transform duration-300 hover:-translate-y-1 md:text-base ${
                   blockColor[s.color] ?? "bg-elevated"
                 }`}
               >

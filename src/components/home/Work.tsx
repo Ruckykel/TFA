@@ -42,17 +42,12 @@ export function Work() {
   return (
     <section id="work" className="pt-8 pb-14 md:py-24" aria-labelledby="work-heading">
       <div className="container-wide">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-16">
-          <div>
-            <p className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-accent">
-              <span aria-hidden="true" className="h-2.5 w-2.5 bg-accent" />
-              {home.work.eyebrow}
-            </p>
-            <h2 id="work-heading" className="headline mt-4 text-5xl md:text-7xl">
-              {home.work.title}
-            </h2>
-          </div>
-          <p className="max-w-xl self-end text-base leading-relaxed text-muted md:text-lg">
+        <div>
+          <h2 id="work-heading" className="headline flex items-center gap-3 text-4xl md:text-5xl">
+            <span aria-hidden="true" className="h-3 w-3 shrink-0 bg-accent" />
+            {home.work.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
             {home.work.intro}
           </p>
         </div>

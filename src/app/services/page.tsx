@@ -5,7 +5,7 @@ import { Work } from "../../components/home/Work";
 import { servicesPage, serviceDetails, studio } from "../../data/copy";
 
 export const metadata: Metadata = {
-  title: "Services — TFA Studios",
+  title: "Services | TFA Studios",
   description: servicesPage.intro,
 };
 

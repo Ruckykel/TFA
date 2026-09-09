@@ -14,7 +14,7 @@ export const services = [
   {
     title: "Digital Marketing & Social Strategy",
     desc:
-      "Visibility that drives impact — from SEO to influencer partnerships, we help you grow your digital footprint.",
+      "Visibility that drives impact, from SEO to influencer partnerships, we help you grow your digital footprint.",
     href: "/services#marketing",
   },
   {

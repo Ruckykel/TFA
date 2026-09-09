@@ -115,7 +115,7 @@ export function Footer() {
 
       {/* Oversized wordmark — SVG, scales to fit, never clips */}
       <div className="group px-6">
-        <Link href="/" aria-label={`${studio.name} — home`} className="block">
+        <Link href="/" aria-label={`${studio.name} home`} className="block">
           <Wordmark />
         </Link>
       </div>

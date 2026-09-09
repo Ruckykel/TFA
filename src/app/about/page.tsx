@@ -5,7 +5,7 @@ import { about, collective, studio } from "../../data/copy";
 import { ContactButton } from "../../components/ContactButton";
 
 export const metadata: Metadata = {
-  title: "Who We Are — TFA Studios",
+  title: "Who We Are | TFA Studios",
   description:
     "TFA Studios is a Lagos creative studio of filmmakers, photographers, designers, and creative directors, building work that connects.",
 };
@@ -27,7 +27,7 @@ function Section({
           <div className="md:col-span-4">
             <h2 className="headline text-3xl md:text-4xl">
               <span className="text-accent">{number}</span>
-              <span className="text-muted"> — </span>
+              <span className="text-muted"> / </span>
               {label}
             </h2>
           </div>

@@ -24,7 +24,7 @@ const garamond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "TFA Studios — Creative Agency & Media Production",
+  title: "TFA Studios | Creative Agency & Media Production",
   description:
     "TFA Studios is a creative agency and media production house built on vision, precision, and the belief that great work changes everything.",
 };

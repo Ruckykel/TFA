@@ -26,16 +26,29 @@ export const home = {
   },
 
   work: {
-    eyebrow: "Recent Projects",
-    title: "The Work Speaks.",
+    title: "Recent Projects",
     intro:
-      "From documentary films to brand campaigns — every frame is built with intention.",
+      "From documentary films to brand campaigns, every frame is built with intention.",
     cta: { label: "Explore Our Work", href: "/portfolio" },
   },
 
+  /**
+   * Homepage showreel, between the hero and Recent Projects.
+   *
+   * The YouTube id is the client placeholder. When the real cut arrives as a
+   * file, drop it in public/ and set the file field — it takes priority
+   * over youtubeId and plays as a native muted, looping video.
+   */
+  showreel: {
+    title: "Showreel",
+    intro: "A minute of the work: film, photography, and design in motion.",
+    youtubeId: "PKPI44u7EMk",
+    file: "",
+    poster: "/vid1.jpg",
+  },
+
   about: {
-    eyebrow: "About",
-    title: "Built on Craft. Driven by Story.",
+    title: "About TFA Studios",
     body: [
       "TFA Studios is a creative studio built around one simple belief: good ideas deserve to be felt.",
       "Founded in 2021, we bring together film, photography, design, and creative strategy to build brands, tell stories, and create work that people actually remember.",
@@ -52,7 +65,7 @@ export const home = {
     items: [
       {
         title: "Film & Video Production",
-        desc: "Commercials, documentaries, brand films, and cinematic content — scripted, shot, and edited end-to-end.",
+        desc: "Commercials, documentaries, brand films, and cinematic content, scripted, shot, and edited end-to-end.",
         href: "/services/video-film",
         color: "accent",
       },
@@ -70,7 +83,7 @@ export const home = {
       },
       {
         title: "Creative Direction & Marketing",
-        desc: "Strategy and execution for campaigns that connect — from concept to campaign.",
+        desc: "Strategy and execution for campaigns that connect, from concept to campaign.",
         href: "/services/creative-direction",
         color: "cream",
       },
@@ -80,7 +93,7 @@ export const home = {
 
   cta: {
     title: "Let's Make Something Worth Remembering.",
-    body: "Whether you have a brief or just a feeling — we're ready to build with you.",
+    body: "Whether you have a brief or just a feeling, we're ready to build with you.",
     button: "Start a Project",
   },
 };
@@ -118,8 +131,8 @@ export const about = {
     number: "01",
     label: "Our Story",
     body: [
-      "In 2021, Feranmi picked up a camera with one belief — that every idea, every person, every brand has a story worth telling well. TFA Studios grew from that conviction.",
-      "Today we are a team of young, driven creatives who create stories that don't just communicate — they connect.",
+      "In 2021, Feranmi picked up a camera with one belief: that every idea, every person, every brand has a story worth telling well. TFA Studios grew from that conviction.",
+      "Today we are a team of young, driven creatives who create stories that don't just communicate. They connect.",
       "We are not just executing briefs. We are building something that lasts.",
     ],
   },
@@ -127,7 +140,7 @@ export const about = {
     number: "02",
     label: "How We Think",
     body: [
-      "There is a moment — in a film, a photograph, a campaign — where everything clicks. Where an audience stops scrolling, stops thinking, and just feels. That moment is what we chase.",
+      "There is a moment in a film, a photograph, a campaign where everything clicks. Where an audience stops scrolling, stops thinking, and just feels. That moment is what we chase.",
       "We work close to the people we build with. Collaboration over hand-off, craft over shortcuts, and an attention to detail that shows up in the final frame.",
       "We will not put our name on work that doesn't move someone.",
     ],
@@ -147,14 +160,14 @@ export const about = {
     number: "04",
     label: "Our Collective",
     intro:
-      "The people behind the work — filmmakers, photographers, designers, and creative directors.",
+      "The people behind the work: filmmakers, photographers, designers, and creative directors.",
   },
 };
 
 export const portfolio = {
   title: "The Work Speaks.",
   intro:
-    "From documentary films to brand campaigns — every frame is built with intention.",
+    "From documentary films to brand campaigns, every frame is built with intention.",
 };
 
 export const footer = {
@@ -218,7 +231,7 @@ export const servicesPage = {
   /** DRAFTED — the deck asks only for "a strong opening". */
   title: "Every Story Needs the Right Hands.",
   intro:
-    "Four disciplines, one studio. We take an idea from the first conversation to the finished piece — and we do it under one roof, so nothing gets lost in the hand-off.",
+    "Four disciplines, one studio. We take an idea from the first conversation to the finished piece, and we do it under one roof, so nothing gets lost in the hand-off.",
 };
 
 export const serviceDetails: ServiceDetail[] = [
@@ -227,7 +240,7 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Film & Video Production",
     headline: "From the First Word of a Script to the Final Colour Grade.",
     intro:
-      "Commercials, documentaries, brand films, and cinematic content — scripted, shot, and edited end-to-end. We build work that earns attention and holds it.",
+      "Commercials, documentaries, brand films, and cinematic content, scripted, shot, and edited end-to-end. We build work that earns attention and holds it.",
     includes: [
       "Commercials & brand films",
       "Documentary & narrative",
@@ -240,7 +253,7 @@ export const serviceDetails: ServiceDetail[] = [
       {
         step: "01",
         title: "Discovery",
-        desc: "We start with the idea and the audience — what needs to be said, and who needs to feel it.",
+        desc: "We start with the idea and the audience: what needs to be said, and who needs to feel it.",
       },
       {
         step: "02",
@@ -301,7 +314,7 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Design",
     headline: "Visual Language That Gives Your Brand a Face Worth Remembering.",
     intro:
-      "Visual identities and creative assets built to be remembered — systems that hold together everywhere your brand shows up.",
+      "Visual identities and creative assets built to be remembered, with systems that hold together everywhere your brand shows up.",
     includes: [
       "Brand identity & logo systems",
       "Type, colour & art direction",
@@ -338,7 +351,7 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Creative Direction & Marketing",
     headline: "We Shape How Your Story Reaches the World.",
     intro:
-      "Strategy and execution for campaigns that connect — from concept to campaign, and we make sure it lands.",
+      "Strategy and execution for campaigns that connect, from concept to campaign, and we make sure it lands.",
     includes: [
       "Creative strategy & concept",
       "Campaign planning",
@@ -356,7 +369,7 @@ export const serviceDetails: ServiceDetail[] = [
       {
         step: "02",
         title: "Concept",
-        desc: "The idea the whole campaign hangs on — one line everyone can repeat.",
+        desc: "The idea the whole campaign hangs on: one line everyone can repeat.",
       },
       {
         step: "03",
@@ -377,7 +390,7 @@ export const contactPage = {
   /** DRAFTED — the deck says only "Put information". */
   title: "You Have a Story. Let's Tell It Right.",
   intro:
-    "Whether you have a brief or just a feeling — tell us what you're building and we'll help you say it in a way people won't forget.",
+    "Whether you have a brief or just a feeling, tell us what you're building and we'll help you say it in a way people won't forget.",
   /** Only the email and city are confirmed. Phone deliberately omitted. */
   details: [
     { label: "Email", value: studio.email, href: `mailto:${studio.email}` },
