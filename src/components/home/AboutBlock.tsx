@@ -13,14 +13,14 @@ export function AboutBlock() {
   const [lead, ...rest] = home.about.body;
 
   return (
-    <section className="py-16 md:py-24" aria-labelledby="about-heading">
+    <section className="py-10 md:py-14" aria-labelledby="about-heading">
       <div className="container-wide">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
           <h2
             id="about-heading"
-            className="headline flex items-center gap-3 text-4xl md:text-5xl"
+            className="headline flex items-center gap-3 text-2xl md:text-3xl"
           >
-            <span aria-hidden="true" className="h-3 w-3 shrink-0 bg-mauve" />
+            <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 bg-mauve" />
             {home.about.title}
           </h2>
 
@@ -29,18 +29,18 @@ export function AboutBlock() {
           </span>
         </div>
 
-        <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
+        <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
           {lead}
         </p>
 
-        <div className="mt-8">
+        <div className="mt-5">
           {rest.map((para, i) => (
             <p
               key={i}
               className={
                 i === 0
                   ? "text-base leading-relaxed text-muted md:text-lg"
-                  : "mt-6 text-base leading-relaxed text-muted md:text-lg"
+                  : "mt-4 text-base leading-relaxed text-muted md:text-lg"
               }
             >
               {para}
@@ -50,7 +50,7 @@ export function AboutBlock() {
 
         <LiveLink
           href={home.about.cta.href}
-          className="group mt-10 inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-text transition-colors hover:text-accent"
+          className="group mt-8 inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-text transition-colors hover:text-accent"
         >
           {home.about.cta.label}
           <span

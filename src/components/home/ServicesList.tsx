@@ -15,11 +15,11 @@ const blockColor: Record<string, string> = {
 
 export function ServicesList() {
   return (
-    <section className="py-16 md:py-24" aria-labelledby="services-heading">
+    <section className="py-10 md:py-14" aria-labelledby="services-heading">
       <div className="container-wide">
         <div className="text-center">
-          <h2 id="services-heading" className="headline flex items-center justify-center gap-3 text-4xl md:text-5xl">
-            <span aria-hidden="true" className="h-3 w-3 shrink-0 bg-accent" />
+          <h2 id="services-heading" className="headline flex items-center justify-center gap-3 text-2xl md:text-3xl">
+            <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 bg-accent" />
             <span className="font-light text-mauve">What </span>
             <span className="font-bold text-accent">we do</span>
           </h2>
@@ -31,7 +31,7 @@ export function ServicesList() {
         {/* Square blocks. h-full on both the cell and the block: the grid row
             stretches the <li>, but the block only matches that height if it is
             also told to fill its own cell. */}
-        <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 md:mt-16 md:gap-6">
+        <ul className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:gap-6">
           {home.services.items.map((s) => (
             <li key={s.title} className="h-full">
               <LiveLink
@@ -47,7 +47,7 @@ export function ServicesList() {
           ))}
         </ul>
 
-        <div className="mt-12 text-center empty:hidden">
+        <div className="mt-8 text-center empty:hidden">
           <LiveLink
             href={home.services.cta.href}
             className="group inline-flex items-center gap-3 border-2 border-black px-8 py-4 text-xs uppercase tracking-[0.2em] text-text transition-colors hover:bg-accent"

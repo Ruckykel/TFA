@@ -5,7 +5,7 @@ import { home, studio } from "../../data/copy";
 
 export function CTA() {
   return (
-    <section className="py-20 md:py-32" aria-labelledby="cta-heading">
+    <section className="py-14 md:py-20" aria-labelledby="cta-heading">
       <div className="container-wide text-center">
         <h2
           id="cta-heading"
@@ -17,7 +17,7 @@ export function CTA() {
           {home.cta.body}
         </p>
 
-        <div className="mt-12 flex flex-col items-center justify-center gap-8">
+        <div className="mt-8 flex flex-col items-center justify-center gap-8">
           <ContactButton className="border-2 border-black bg-accent px-12 py-5 text-xs uppercase tracking-[0.2em] text-black transition-all hover:-translate-y-1 hover:bg-cream">
             {home.cta.button}
           </ContactButton>
