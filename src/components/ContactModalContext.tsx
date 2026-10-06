@@ -61,11 +61,11 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     />
 
                     {/* Modal content */}
-                    <div className="relative z-10 w-full max-w-lg animate-[modalIn_300ms_ease-out]">
+                    <div className="relative z-10 flex max-h-full w-full max-w-lg flex-col animate-[modalIn_300ms_ease-out]">
                         {/* Close button */}
                         <button
                             onClick={closeContactModal}
-                            className="mb-3 ml-auto flex items-center gap-2 rounded-full border border-border bg-elevated backdrop-blur-md px-4 py-2 text-sm font-medium text-muted hover:bg-elevated hover:border-[#fa6903]/40 transition-all group"
+                            className="mb-3 ml-auto flex shrink-0 items-center gap-2 rounded-full border border-border bg-elevated backdrop-blur-md px-4 py-2 text-sm font-medium text-muted hover:bg-elevated hover:border-[#fa6903]/40 transition-all group"
                             aria-label="Close contact form"
                         >
                             <span>Close</span>
@@ -83,14 +83,14 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                             </svg>
                         </button>
 
-                        {/* Form card with glassmorphism */}
-                        <div className="rounded-2xl border border-border bg-bg shadow-elevated overflow-hidden">
+                        {/* Form card — capped to the viewport, scrolls inside on short screens */}
+                        <div className="min-h-0 overflow-y-auto overscroll-contain rounded-2xl border border-border bg-bg shadow-elevated">
                             {/* Accent gradient top bar */}
                             <div className="h-1 w-full bg-gradient-to-r from-[#fa6903] via-[#6366F1] to-[#fa6903]" />
 
-                            <div className="p-6 md:p-8">
-                                <div className="text-center mb-6">
-                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#fa6903]/10 border border-[#fa6903]/20 mb-3">
+                            <div className="p-5 md:p-8">
+                                <div className="text-center mb-5">
+                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#fa6903]/10 border border-[#fa6903]/20 mb-3 [@media(max-height:720px)]:hidden">
                                         <svg
                                             className="w-5 h-5 text-[#fa6903]"
                                             viewBox="0 0 24 24"

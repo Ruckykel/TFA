@@ -1,15 +1,8 @@
 import React from "react";
 import { LiveLink } from "../LiveLink";
 import { WorkTile } from "../WorkTile";
-import { recentWorks } from "../../data/works";
+import { recentWorks, studioStills, type Work as WorkItem } from "../../data/works";
 import { home } from "../../data/copy";
-
-/**
- * Placeholder stills for the homepage grid until each project has its own
- * cut-down clip. Swap these for `/works/*.mp4` on the work items themselves
- * and the grid picks them up automatically.
- */
-const placeholders = ["/vid1.jpg", "/vid2.jpg", "/vid3.jpg", "/vid4.jpg"];
 
 /**
  * Nine cells stacked as three bento rows on a 4-column grid. Each row tiles
@@ -18,30 +11,35 @@ const placeholders = ["/vid1.jpg", "/vid2.jpg", "/vid3.jpg", "/vid4.jpg"];
  *   row one   1 + 2 + 1
  *   row two   1 + 1 + 2
  *   row three 2 + 1 + 1
+ *
+ * `film` cells take the next project with real media (16:9 thumbnails sit
+ * best in the wide cells); `still` cells take the next studio photograph.
+ * The mix gives the "combination of all projects" the deck asks for.
  */
-const layout = [
-  "md:col-span-1",
-  "md:col-span-2",
-  "md:col-span-1",
+const layout: { span: string; kind: "film" | "still" }[] = [
+  { span: "md:col-span-1", kind: "still" },
+  { span: "md:col-span-2", kind: "film" },
+  { span: "md:col-span-1", kind: "still" },
 
-  "md:col-span-1",
-  "md:col-span-1",
-  "md:col-span-2",
+  { span: "md:col-span-1", kind: "film" },
+  { span: "md:col-span-1", kind: "still" },
+  { span: "md:col-span-2", kind: "film" },
 
-  "md:col-span-2",
-  "md:col-span-1",
-  "md:col-span-1",
+  { span: "md:col-span-2", kind: "film" },
+  { span: "md:col-span-1", kind: "still" },
+  { span: "md:col-span-1", kind: "still" },
 ];
 
 export function Work() {
-  const tiles = layout.map((span, i) => ({
-    work: {
-      ...recentWorks[i % recentWorks.length],
-      poster: placeholders[i % placeholders.length],
-    },
-    span,
-    key: i,
-  }));
+  let film = 0;
+  let still = 0;
+  const tiles = layout.map(({ span, kind }, i) => {
+    const work: WorkItem =
+      kind === "film" && recentWorks.length > 0
+        ? recentWorks[film++ % recentWorks.length]
+        : studioStills[still++ % studioStills.length];
+    return { work, span, key: i };
+  });
 
   return (
     <section id="work" className="px-4 py-8 md:px-6 md:py-12" aria-labelledby="work-heading">

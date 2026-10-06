@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactButton } from "../../components/ContactButton";
 import { Work } from "../../components/home/Work";
-import { servicesPage, serviceDetails, studio } from "../../data/copy";
+import { CtaEmail } from "../../components/CtaEmail";
+import { servicesPage, serviceDetails } from "../../data/copy";
 
 export const metadata: Metadata = {
   title: "Services | TFA Studios",
@@ -65,16 +66,11 @@ export default function ServicesPage() {
           <h2 className="headline mx-auto max-w-3xl text-[clamp(2rem,6vw,4.5rem)]">
             Let&apos;s Make Something Worth Remembering.
           </h2>
-          <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-8">
             <ContactButton className="bg-accent px-10 py-5 text-xs uppercase tracking-[0.2em] text-bg transition-opacity hover:opacity-90">
               Start a Project
             </ContactButton>
-            <a
-              href={`mailto:${studio.email}`}
-              className="text-sm text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
-            >
-              {studio.email}
-            </a>
+            <CtaEmail />
           </div>
         </div>
       </section>

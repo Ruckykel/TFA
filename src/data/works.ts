@@ -81,19 +81,11 @@ export const works: Work[] = [
     poster: yt("2q6PZJUGeKc"),
     src: null,
   },
-  {
-    title: "Uber",
-    category: "film",
-    blurb: "A narrative-driven commercial campaign created for Uber.",
-    href: "https://youtu.be/VXY2kKBuDcA",
-    poster: yt("VXY2kKBuDcA"),
-    src: null,
-  },
+  { title: "I Never Left", category: "film", href: null, poster: null, src: null },
+  { title: "Yahshud", category: "film", href: null, poster: null, src: null },
   { title: "NFL Documentary", category: "film", href: null, poster: null, src: null },
   { title: "Greatest Gbogbo", category: "film", href: null, poster: null, src: null },
-  { title: "I Never Left", category: "film", href: null, poster: null, src: null },
   { title: "ISO Welcome Video", category: "film", href: null, poster: null, src: null },
-  { title: "Yashuud", category: "film", href: null, poster: null, src: null },
   { title: "HerVest Cliq", category: "film", href: null, poster: null, src: null },
   { title: "Dr Lena Hooding Ceremony", category: "film", href: null, poster: null, src: null },
   { title: "SUN Project", category: "film", href: null, poster: null, src: null },
@@ -134,3 +126,16 @@ export const recentWorks: Work[] = works.filter((w) => w.poster !== null);
 
 export const worksByCategory = (category: Category) =>
   works.filter((w) => w.category === category);
+
+/**
+ * Studio photographs from the client's picture folder, used to round out the
+ * homepage grid alongside the film work. Unlinked: they are stills from shoots
+ * and events, not catalogue entries.
+ */
+export const studioStills: Work[] = [
+  { title: "WTS Documentary Screening", category: "photography", href: null, poster: "/studio/wts-screening.jpg", src: null },
+  { title: "Lens for Good, Kwara", category: "photography", href: null, poster: "/studio/lens-for-good-kwara.jpg", src: null },
+  { title: "On Set", category: "photography", href: null, poster: "/studio/on-set-red-room.jpg", src: null },
+  { title: "Behind the Lens", category: "photography", href: null, poster: "/studio/studio-lighting.jpg", src: null },
+  { title: "In the Frame", category: "photography", href: null, poster: "/studio/viewfinder.jpg", src: null },
+];

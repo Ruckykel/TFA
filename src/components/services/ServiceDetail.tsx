@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ContactButton } from "../ContactButton";
-import { serviceDetails, studio, type ServiceSlug } from "../../data/copy";
+import { CtaEmail } from "../CtaEmail";
+import { serviceDetails, type ServiceSlug } from "../../data/copy";
 
 /** Shared template for the four service detail pages. */
 export function ServiceDetail({ slug }: { slug: ServiceSlug }) {
@@ -24,6 +26,19 @@ export function ServiceDetail({ slug }: { slug: ServiceSlug }) {
           <p className="mt-10 max-w-2xl border-t border-border pt-8 text-base leading-relaxed text-muted md:text-lg">
             {service.intro}
           </p>
+        </div>
+      </section>
+
+      {/* Studio still */}
+      <section className="px-4 pb-16 md:px-6 md:pb-24">
+        <div className="relative h-[50vh] w-full overflow-hidden border-2 border-black bg-elevated md:h-[70vh]">
+          <Image
+            src={service.image.src}
+            alt={service.image.alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
@@ -106,16 +121,11 @@ export function ServiceDetail({ slug }: { slug: ServiceSlug }) {
           <h2 className="headline mx-auto max-w-3xl text-[clamp(2rem,6vw,4.5rem)]">
             Let&apos;s Make Something Worth Remembering.
           </h2>
-          <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-8">
             <ContactButton className="bg-accent px-10 py-5 text-xs uppercase tracking-[0.2em] text-bg transition-opacity hover:opacity-90">
               Start a Project
             </ContactButton>
-            <a
-              href={`mailto:${studio.email}`}
-              className="text-sm text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
-            >
-              {studio.email}
-            </a>
+            <CtaEmail />
           </div>
         </div>
       </section>

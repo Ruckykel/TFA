@@ -10,7 +10,7 @@
  *
  * TO LAUNCH THE FULL SITE: set this to false. Nothing else needs changing.
  */
-export const HOMEPAGE_ONLY = true;
+export const HOMEPAGE_ONLY = false;
 
 /** Routes that stay reachable while the gate is on. */
 const LIVE_PATHS = ["/"];

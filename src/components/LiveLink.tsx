@@ -19,6 +19,7 @@ type Props = {
   rel?: string;
   onClick?: () => void;
   "aria-label"?: string;
+  "aria-current"?: "page";
 };
 
 /**

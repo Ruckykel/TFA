@@ -13,7 +13,7 @@ export const studio = {
   tagline: "Connecting Hearts and Minds",
   location: "Lagos, Nigeria",
   email: "admin@tfastudioshq.com",
-  founded: 2021,
+  founded: 2022,
 };
 
 export const home = {
@@ -44,17 +44,18 @@ export const home = {
     intro: "A minute of the work: film, photography, and design in motion.",
     youtubeId: "PKPI44u7EMk",
     file: "",
-    poster: "/vid1.jpg",
+    poster: "/studio/viewfinder.jpg",
   },
 
   about: {
     title: "About TFA Studios",
     body: [
       "TFA Studios is a creative studio built around one simple belief: good ideas deserve to be felt.",
-      "Founded in 2021, we bring together film, photography, design, and creative strategy to build brands, tell stories, and create work that people actually remember.",
+      "Founded in 2022, we bring together film, photography, design, and creative strategy to build brands, tell stories, and create work that people actually remember.",
       "We're a mix of filmmakers, photographers, designers, and creative thinkers, working across culture, brands, and people to turn ideas into things worth seeing, sharing, and feeling.",
     ],
     cta: { label: "Come See Who We Are", href: "/about" },
+    image: { src: "/studio/crew-duo.jpg", alt: "Two TFA Studios crew members smiling beside a cinema camera on set" },
   },
 
   services: {
@@ -120,30 +121,75 @@ export const homeVariants = {
   },
 };
 
-/** About page — five sections, per the deck's numbered outline. */
+/**
+ * About page, per the deck's numbered outline. The deck numbers both Clients
+ * and Collective "04"; they run 04 and 05 here so the sequence reads cleanly.
+ */
 export const about = {
-  hero: {
-    title: "We Started With a Camera and a Conviction.",
-    intro:
-      "A collective of filmmakers, photographers, designers, and creative thinkers.",
+  /** The deck's "Punchline" — a reference to the people behind the work. */
+  punchline: {
+    eyebrow: "Who We Are",
+    lead: "TFA Studios consists of an ecosystem of talents whose work is an embodiment of the core principle of the studio:",
+    emphasis: "good ideas deserve to be felt.",
+    body: [
+      "Founded in 2022, we bring together the best minds across film, photography, design, and creative strategy to build brands, tell stories, and create work that resonates deeply with people.",
+      "We're a creative agency working across culture, brands, and people to connect hearts and minds.",
+    ],
+    image: {
+      src: "/studio/on-set-camera-team.jpg",
+      alt: "TFA Studios camera team framing a shot on set",
+    },
   },
   story: {
     number: "01",
     label: "Our Story",
+    /** Opening line, set large. */
+    lead: "TFA Studios began with me, Feranmi Abiola, a filmmaker who has always been fascinated by people.",
     body: [
-      "In 2021, Feranmi picked up a camera with one belief: that every idea, every person, every brand has a story worth telling well. TFA Studios grew from that conviction.",
-      "Today we are a team of young, driven creatives who create stories that don't just communicate. They connect.",
-      "We are not just executing briefs. We are building something that lasts.",
+      "Long before TFA Studios had a name, a logo, or a defined identity, I was drawn to stories, the little things people said, the way they moved through the world, the things they cared about, and the emotions that existed beneath what we could see.",
+      "I always believed that a good story can make you feel something. It can make you laugh, question what you believe, remember something you had forgotten, or see another person differently.",
+      "That belief became the foundation of TFA Studios.",
+      "I started TFA Studios because I wanted to create work that went beyond simply looking good. I wanted to make work that meant something.",
+      "As a filmmaker, I found myself moving between different worlds: film, photography, branding, design, advertising and creative direction. But underneath all of them was the same question:",
     ],
+    /** The question the story turns on, set as a pull quote. */
+    question: "How do we make people care?",
+    close: [
+      "That question became increasingly important to me.",
+      "Because whether we are telling the story of a person, building the identity of a brand, documenting a community, or creating a campaign, the goal is ultimately the same: to create a connection.",
+      "A connection between an idea and the person experiencing it. Between hearts and minds.",
+      "And that became the philosophy behind TFA Studios.",
+    ],
+    signature: { name: "Feranmi Abiola", role: "Founder, TFA Studios" },
   },
   think: {
     number: "02",
     label: "How We Think",
+    title: "Make It Mean Something.",
     body: [
-      "There is a moment in a film, a photograph, a campaign where everything clicks. Where an audience stops scrolling, stops thinking, and just feels. That moment is what we chase.",
-      "We work close to the people we build with. Collaboration over hand-off, craft over shortcuts, and an attention to detail that shows up in the final frame.",
-      "We will not put our name on work that doesn't move someone.",
+      "We believe the best creative work starts with understanding: the idea, the audience, the culture, and the reason the work needs to exist in the first place.",
+      "So we don't just make things look good. We ask questions, find the story, and build from there.",
     ],
+    principles: [
+      {
+        title: "The story comes first.",
+        desc: "Every frame, image, word, and detail should have a reason to be there. We look for the human truth at the centre of an idea and build around it.",
+      },
+      {
+        title: "Ideas are better together.",
+        desc: "TFA Studios is a collaborative studio. Filmmakers, photographers, designers, strategists, and creatives bring different ways of seeing to the table. We believe the strongest work happens when those perspectives meet.",
+      },
+      {
+        title: "Details make the difference.",
+        desc: "From the first concept to the final frame, we care about the things people may not consciously notice: the pacing, the composition, the texture, the sound, the feeling. Because sometimes, it's the smallest detail that produces exceptional work.",
+      },
+      {
+        title: "Make it feel like something.",
+        desc: "We aren't interested in making work simply for the sake of making it. We want to create work that connects: work people can see themselves in, remember, talk about, and feel.",
+      },
+    ],
+    close:
+      "That's how we work: with curiosity, intention, collaboration, and a healthy obsession with getting the idea right.",
   },
   services: {
     number: "03",
@@ -156,11 +202,32 @@ export const about = {
       "Branding & Creative Strategy",
     ],
   },
-  collective: {
+  clients: {
     number: "04",
+    label: "Our Clients",
+    items: [
+      "Google",
+      "DelYork",
+      "NFL",
+      "AFC",
+      "SEDC",
+      "Wetalksound",
+      "France in Nigeria",
+      "Yahshud",
+      "Hatricks by Tolani",
+      "Dashme Foundation",
+      "Chance by Drawmax",
+      "Aproko Doctor Global",
+      "HerVest",
+    ],
+  },
+  collective: {
+    number: "05",
     label: "Our Collective",
+    /** DRAFTED — the deck asks for "more personality-driven" but gives no wording. */
+    title: "Explorers, Storytellers, and Builders.",
     intro:
-      "The people behind the work: filmmakers, photographers, designers, and creative directors.",
+      "The people behind the work: filmmakers, photographers, designers, strategists, and creative thinkers who show up on set, in the edit, and in the room where the idea gets made.",
   },
 };
 
@@ -193,12 +260,37 @@ export const footer = {
 };
 
 /**
- * Studio collective. The copy deck marks this section "(To put pictures
- * together)" but supplies no names or portraits, so it ships empty — the
- * section renders its heading and intro until members are added here.
+ * Studio collective. The deck marks this section "(To put pictures
+ * together)": these are the studio's own on-set and event photographs.
+ * `featured` scatters around the section heading on desktop; `strip` runs
+ * as a scrolling film strip beneath it. No names are attached — the deck
+ * supplies none.
  */
-export type Member = { name: string; role: string; img: string | null };
-export const collective: Member[] = [];
+export type Photo = { src: string; alt: string };
+
+export const collective: { featured: Photo[]; strip: Photo[] } = {
+  featured: [
+    { src: "/studio/collective-stage.jpg", alt: "The TFA Studios collective together on stage after a screening" },
+    { src: "/studio/collective-selfie.jpg", alt: "TFA crew members grinning into the camera on a location shoot" },
+    { src: "/studio/collective-laptop.jpg", alt: "Team members reviewing work together on a laptop" },
+    { src: "/studio/sound-recordist.jpg", alt: "Sound recordist monitoring audio on set" },
+    { src: "/studio/collective-british-council.jpg", alt: "The team at the Creative Showcase Programme, British Council" },
+  ],
+  strip: [
+    { src: "/studio/gimbal-operator.jpg", alt: "Camera operator rigging a gimbal" },
+    { src: "/studio/camera-setup.jpg", alt: "Setting up a camera for an interview" },
+    { src: "/studio/directing.jpg", alt: "Director guiding talent between takes" },
+    { src: "/studio/makeup.jpg", alt: "Make-up touch-up before a scene" },
+    { src: "/studio/night-shoot.jpg", alt: "Crew lining up a shot at night" },
+    { src: "/studio/street-interview.jpg", alt: "Street interview in front of a mural" },
+    { src: "/studio/screening-setup.jpg", alt: "Preparing the projection for a screening" },
+    { src: "/studio/camera-operator.jpg", alt: "Camera operator beside a cinema camera" },
+    { src: "/studio/bookshop-shoot.jpg", alt: "Crew shooting a scene in a bookshop" },
+    { src: "/studio/field-camera.jpg", alt: "Filming on location at an event" },
+    { src: "/studio/night-set.jpg", alt: "Black-and-white moment on a night set" },
+    { src: "/studio/set-teal.jpg", alt: "Crew at work on a colour-lit set" },
+  ],
+};
 
 /* ------------------------------------------------------------------ */
 /*  DRAFTED COPY — NOT FROM THE CLIENT DECK                            */
@@ -222,6 +314,8 @@ export type ServiceDetail = {
   intro: string;
   /** What the engagement covers. */
   includes: string[];
+  /** Wide still under the hero. */
+  image: Photo;
   /** How the work runs, start to finish. */
   process: { step: string; title: string; desc: string }[];
 };
@@ -237,6 +331,7 @@ export const servicesPage = {
 export const serviceDetails: ServiceDetail[] = [
   {
     slug: "video-film",
+    image: { src: "/studio/interview-setup.jpg", alt: "Interview set lit and framed in the studio" },
     title: "Film & Video Production",
     headline: "From the First Word of a Script to the Final Colour Grade.",
     intro:
@@ -274,6 +369,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "photography",
+    image: { src: "/studio/photographer.jpg", alt: "Photographer reviewing shots between the seats of a cinema" },
     title: "Photography",
     headline: "Still Images That Carry Weight.",
     intro:
@@ -311,6 +407,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "design",
+    image: { src: "/studio/design-session.jpg", alt: "Team working through ideas around a laptop" },
     title: "Design",
     headline: "Visual Language That Gives Your Brand a Face Worth Remembering.",
     intro:
@@ -348,6 +445,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "creative-direction",
+    image: { src: "/studio/on-set-red-room.jpg", alt: "Directing a scene on a warmly lit set" },
     title: "Creative Direction & Marketing",
     headline: "We Shape How Your Story Reaches the World.",
     intro:

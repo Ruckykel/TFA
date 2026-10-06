@@ -75,7 +75,9 @@ export function WorkTile({
           src={work.poster}
           alt={work.title}
           fill
-          unoptimized
+          /* Remote thumbnails pass straight through; local stills are
+             resized by the image optimiser. */
+          unoptimized={/^https?:\/\//.test(work.poster)}
           sizes={sizes}
           className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />

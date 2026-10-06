@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ContactButton } from "./ContactButton";
 import { LiveLink } from "./LiveLink";
@@ -8,10 +9,10 @@ import { LiveLink } from "./LiveLink";
 /** Page list per the client reference. Gated routes stay visible but inert. */
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Work", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
-  { label: "Resources", href: "/resources" },
 ];
 
 const liveClass =
@@ -20,7 +21,14 @@ const liveClass =
 const gatedClass =
   "text-xs uppercase tracking-[0.2em] text-muted/50 cursor-default select-none";
 
+/** Home matches exactly; every other item also owns its sub-pages. */
+function isActive(href: string, pathname: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -65,7 +73,12 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 gated="text"
-                className={liveClass}
+                className={
+                  isActive(item.href, pathname)
+                    ? `${liveClass} !text-accent`
+                    : liveClass
+                }
+                aria-current={isActive(item.href, pathname) ? "page" : undefined}
                 gatedClassName={gatedClass}
                 gatedTitle="Coming soon"
               >
@@ -109,7 +122,10 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   gated="text"
-                  className="headline block border-b border-border py-5 text-3xl text-text"
+                  className={`headline block border-b border-border py-5 text-3xl ${
+                    isActive(item.href, pathname) ? "text-accent" : "text-text"
+                  }`}
+                  aria-current={isActive(item.href, pathname) ? "page" : undefined}
                   gatedClassName="headline block border-b border-border py-5 text-3xl text-muted/40 cursor-default select-none"
                   gatedTitle="Coming soon"
                   onClick={() => setMobileOpen(false)}
