@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# full-size client originals (web copies live in public/studio)
+/public/TFA Pictures/
