@@ -129,20 +129,23 @@ export const about = {
   /** The deck's "Punchline" — a reference to the people behind the work. */
   punchline: {
     eyebrow: "Who We Are",
-    lead: "TFA Studios consists of an ecosystem of talents whose work is an embodiment of the core principle of the studio:",
-    emphasis: "good ideas deserve to be felt.",
+    lead: "TFA Studios is a creative agency with an ecosystem of talents dedicated to our ultimate goal:",
+    emphasis: "connecting hearts and minds through storytelling.",
     body: [
       "Founded in 2022, we bring together the best minds across film, photography, design, and creative strategy to build brands, tell stories, and create work that resonates deeply with people.",
-      "We're a creative agency working across culture, brands, and people to connect hearts and minds.",
     ],
     image: {
-      src: "/studio/on-set-camera-team.jpg",
-      alt: "TFA Studios camera team framing a shot on set",
+      src: "/studio/about-team.jpg",
+      alt: "TFA Studios crew filming a scene in a bookshop",
     },
   },
   story: {
     number: "01",
     label: "Our Story",
+    portrait: {
+      src: "/studio/feranmi.jpg",
+      alt: "Feranmi Abiola, founder of TFA Studios",
+    },
     /** Opening line, set large. */
     lead: "TFA Studios began with me, Feranmi Abiola, a filmmaker who has always been fascinated by people.",
     body: [
@@ -285,7 +288,7 @@ export const collective: { featured: Photo[]; strip: Photo[] } = {
     { src: "/studio/street-interview.jpg", alt: "Street interview in front of a mural" },
     { src: "/studio/screening-setup.jpg", alt: "Preparing the projection for a screening" },
     { src: "/studio/camera-operator.jpg", alt: "Camera operator beside a cinema camera" },
-    { src: "/studio/bookshop-shoot.jpg", alt: "Crew shooting a scene in a bookshop" },
+    { src: "/studio/on-location.jpg", alt: "Camera operator on location at dusk" },
     { src: "/studio/field-camera.jpg", alt: "Filming on location at an event" },
     { src: "/studio/night-set.jpg", alt: "Black-and-white moment on a night set" },
     { src: "/studio/set-teal.jpg", alt: "Crew at work on a colour-lit set" },

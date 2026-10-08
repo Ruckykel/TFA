@@ -15,10 +15,13 @@ export const metadata: Metadata = {
 function Section({
   number,
   label,
+  aside,
   children,
 }: {
   number: string;
   label: string;
+  /** Optional content kept with the heading in the left column. */
+  aside?: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
@@ -26,11 +29,14 @@ function Section({
       <div className="container-wide">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4">
-            <h2 className="headline text-3xl md:sticky md:top-28 md:text-4xl">
-              <span className="text-accent">{number}</span>
-              <span className="text-muted"> / </span>
-              {label}
-            </h2>
+            <div className="md:sticky md:top-28">
+              <h2 className="headline text-3xl md:text-4xl">
+                <span className="text-accent">{number}</span>
+                <span className="text-muted"> / </span>
+                {label}
+              </h2>
+              {aside}
+            </div>
           </div>
           <div className="md:col-span-8">{children}</div>
         </div>
@@ -73,7 +79,7 @@ export default function AboutPage() {
             className="rise-in mt-12 grid grid-cols-1 gap-10 border-t border-border pt-10 md:grid-cols-12 md:gap-16"
             style={{ animationDelay: "180ms" }}
           >
-            <div className="md:col-span-5">
+            <div className="md:col-span-6">
               {punchline.body.map((para, i) => (
                 <p
                   key={i}
@@ -85,15 +91,15 @@ export default function AboutPage() {
                 </p>
               ))}
             </div>
-            <div className="md:col-span-7">
-              <div className="relative aspect-[16/10] w-full overflow-hidden border-2 border-black bg-elevated">
+            <div className="md:col-span-5 md:col-start-8">
+              <div className="relative aspect-[4/5] w-full overflow-hidden border-2 border-black bg-elevated">
                 <Image
                   src={punchline.image.src}
                   alt={punchline.image.alt}
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                  className="object-cover object-[50%_35%]"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -102,7 +108,26 @@ export default function AboutPage() {
       </section>
 
       {/* 01 — Our Story: the founder's letter */}
-      <Section number={story.number} label={story.label}>
+      <Section
+        number={story.number}
+        label={story.label}
+        aside={
+          <figure className="mt-8 max-w-xs">
+            <div className="relative aspect-[2/3] w-full overflow-hidden border-2 border-black bg-elevated">
+              <Image
+                src={story.portrait.src}
+                alt={story.portrait.alt}
+                fill
+                sizes="(max-width: 768px) 80vw, 320px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs uppercase tracking-[0.2em] text-muted">
+              {story.signature.name}, Founder
+            </figcaption>
+          </figure>
+        }
+      >
         <p className="font-serif-editorial text-2xl leading-snug text-text md:text-4xl">
           {story.lead}
         </p>
