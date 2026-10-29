@@ -106,7 +106,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-black pt-16 md:pt-20">
+    <footer className="bg-black">
       {/* Palette band, marking the change of ground */}
       <div aria-hidden="true" className="flex h-2 w-full">
         <span className="flex-1 bg-accent" />

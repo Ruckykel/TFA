@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { sendEnquiry } from "../lib/enquiry";
+import { contactPage } from "../data/copy";
 
 export function ContactForm({ embedded = false }: { embedded?: boolean }) {
     const [formData, setFormData] = useState({
@@ -14,31 +16,11 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
         e.preventDefault();
         setStatus("loading");
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE",
-                    name: formData.name,
-                    email: formData.email,
-                    subject: formData.subject || "New Contact Form Submission",
-                    message: formData.message,
-                    from_name: "TFA Studios Website",
-                }),
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                setStatus("success");
-                setFormData({ name: "", email: "", subject: "", message: "" });
-            } else {
-                setStatus("error");
-            }
-        } catch {
+        const ok = await sendEnquiry(formData);
+        if (ok) {
+            setStatus("success");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        } else {
             setStatus("error");
         }
     };
@@ -105,12 +87,9 @@ export function ContactForm({ embedded = false }: { embedded?: boolean }) {
                         className="w-full rounded-lg border border-border bg-elevated px-4 py-3 text-sm outline-none focus:border-[#fa6903] focus:ring-1 focus:ring-[#fa6903]/30 transition-colors text-text"
                     >
                         <option value="">Subject / Service Type</option>
-                        <option value="Video Production">Video Production</option>
-                        <option value="Branding & Design">Branding & Design</option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Event Coverage">Event Coverage</option>
-                        <option value="Other">Other</option>
+                        {contactPage.topics.map((t) => (
+                            <option key={t} value={t}>{t}</option>
+                        ))}
                     </select>
                 </div>
                 <div>

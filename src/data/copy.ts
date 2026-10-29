@@ -1,3 +1,5 @@
+import type { Category } from "./works";
+
 /**
  * Site copy, from the client copy deck.
  *
@@ -122,8 +124,8 @@ export const homeVariants = {
 };
 
 /**
- * About page, per the deck's numbered outline. The deck numbers both Clients
- * and Collective "04"; they run 04 and 05 here so the sequence reads cleanly.
+ * About page. Story, What We Do, Clients, Collective: one shell throughout so
+ * the sections read as a single flow.
  */
 export const about = {
   /** The deck's "Punchline" — a reference to the people behind the work. */
@@ -165,67 +167,20 @@ export const about = {
     ],
     signature: { name: "Feranmi Abiola", role: "Founder, TFA Studios" },
   },
-  think: {
-    number: "02",
-    label: "How We Think",
-    title: "Make It Mean Something.",
-    body: [
-      "We believe the best creative work starts with understanding: the idea, the audience, the culture, and the reason the work needs to exist in the first place.",
-      "So we don't just make things look good. We ask questions, find the story, and build from there.",
-    ],
-    principles: [
-      {
-        title: "The story comes first.",
-        desc: "Every frame, image, word, and detail should have a reason to be there. We look for the human truth at the centre of an idea and build around it.",
-      },
-      {
-        title: "Ideas are better together.",
-        desc: "TFA Studios is a collaborative studio. Filmmakers, photographers, designers, strategists, and creatives bring different ways of seeing to the table. We believe the strongest work happens when those perspectives meet.",
-      },
-      {
-        title: "Details make the difference.",
-        desc: "From the first concept to the final frame, we care about the things people may not consciously notice: the pacing, the composition, the texture, the sound, the feeling. Because sometimes, it's the smallest detail that produces exceptional work.",
-      },
-      {
-        title: "Make it feel like something.",
-        desc: "We aren't interested in making work simply for the sake of making it. We want to create work that connects: work people can see themselves in, remember, talk about, and feel.",
-      },
-    ],
-    close:
-      "That's how we work: with curiosity, intention, collaboration, and a healthy obsession with getting the idea right.",
-  },
+  /**
+   * Replaces How We Think (removed per the client meeting). Rows come from
+   * serviceDetails so the About page and the service pages never disagree.
+   */
   services: {
-    number: "03",
+    number: "02",
     label: "What We Do",
-    items: [
-      "Film & Video",
-      "Photography",
-      "Creative Direction",
-      "Design",
-      "Branding & Creative Strategy",
-    ],
   },
   clients: {
-    number: "04",
+    number: "03",
     label: "Our Clients",
-    items: [
-      "Google",
-      "DelYork",
-      "NFL",
-      "AFC",
-      "SEDC",
-      "Wetalksound",
-      "France in Nigeria",
-      "Yahshud",
-      "Hatricks by Tolani",
-      "Dashme Foundation",
-      "Chance by Drawmax",
-      "Aproko Doctor Global",
-      "HerVest",
-    ],
   },
   collective: {
-    number: "05",
+    number: "04",
     label: "Our Collective",
     /** DRAFTED — the deck asks for "more personality-driven" but gives no wording. */
     title: "Explorers, Storytellers, and Builders.",
@@ -246,7 +201,7 @@ export const footer = {
     { label: "Video & Film", href: "/services/video-film" },
     { label: "Photography", href: "/services/photography" },
     { label: "Design", href: "/services/design" },
-    { label: "Creative Direction", href: "/services/creative-direction" },
+    { label: "Creative Direction & Marketing", href: "/services/creative-direction" },
   ],
   studio: [
     { label: "About", href: "/about" },
@@ -264,36 +219,31 @@ export const footer = {
 
 /**
  * Studio collective. The deck marks this section "(To put pictures
- * together)": these are the studio's own on-set and event photographs.
- * `featured` scatters around the section heading on desktop; `strip` runs
- * as a scrolling film strip beneath it. No names are attached — the deck
+ * together)": these are the studio's own on-set and event photographs, run
+ * as one continuously scrolling strip. No names are attached — the deck
  * supplies none.
  */
 export type Photo = { src: string; alt: string };
 
-export const collective: { featured: Photo[]; strip: Photo[] } = {
-  featured: [
-    { src: "/studio/collective-stage.jpg", alt: "The TFA Studios collective together on stage after a screening" },
-    { src: "/studio/collective-selfie.jpg", alt: "TFA crew members grinning into the camera on a location shoot" },
-    { src: "/studio/collective-laptop.jpg", alt: "Team members reviewing work together on a laptop" },
-    { src: "/studio/sound-recordist.jpg", alt: "Sound recordist monitoring audio on set" },
-    { src: "/studio/collective-british-council.jpg", alt: "The team at the Creative Showcase Programme, British Council" },
-  ],
-  strip: [
-    { src: "/studio/gimbal-operator.jpg", alt: "Camera operator rigging a gimbal" },
-    { src: "/studio/camera-setup.jpg", alt: "Setting up a camera for an interview" },
-    { src: "/studio/directing.jpg", alt: "Director guiding talent between takes" },
-    { src: "/studio/makeup.jpg", alt: "Make-up touch-up before a scene" },
-    { src: "/studio/night-shoot.jpg", alt: "Crew lining up a shot at night" },
-    { src: "/studio/street-interview.jpg", alt: "Street interview in front of a mural" },
-    { src: "/studio/screening-setup.jpg", alt: "Preparing the projection for a screening" },
-    { src: "/studio/camera-operator.jpg", alt: "Camera operator beside a cinema camera" },
-    { src: "/studio/on-location.jpg", alt: "Camera operator on location at dusk" },
-    { src: "/studio/field-camera.jpg", alt: "Filming on location at an event" },
-    { src: "/studio/night-set.jpg", alt: "Black-and-white moment on a night set" },
-    { src: "/studio/set-teal.jpg", alt: "Crew at work on a colour-lit set" },
-  ],
-};
+export const collective: Photo[] = [
+  { src: "/studio/collective-stage.jpg", alt: "The TFA Studios collective together on stage after a screening" },
+  { src: "/studio/collective-selfie.jpg", alt: "TFA crew members grinning into the camera on a location shoot" },
+  { src: "/studio/collective-laptop.jpg", alt: "Team members reviewing work together on a laptop" },
+  { src: "/studio/sound-recordist.jpg", alt: "Sound recordist monitoring audio on set" },
+  { src: "/studio/collective-british-council.jpg", alt: "The team at the Creative Showcase Programme, British Council" },
+  { src: "/studio/gimbal-operator.jpg", alt: "Camera operator rigging a gimbal" },
+  { src: "/studio/camera-setup.jpg", alt: "Setting up a camera for an interview" },
+  { src: "/studio/directing.jpg", alt: "Director guiding talent between takes" },
+  { src: "/studio/makeup.jpg", alt: "Make-up touch-up before a scene" },
+  { src: "/studio/night-shoot.jpg", alt: "Crew lining up a shot at night" },
+  { src: "/studio/street-interview.jpg", alt: "Street interview in front of a mural" },
+  { src: "/studio/screening-setup.jpg", alt: "Preparing the projection for a screening" },
+  { src: "/studio/camera-operator.jpg", alt: "Camera operator beside a cinema camera" },
+  { src: "/studio/on-location.jpg", alt: "Camera operator on location at dusk" },
+  { src: "/studio/field-camera.jpg", alt: "Filming on location at an event" },
+  { src: "/studio/night-set.jpg", alt: "Black-and-white moment on a night set" },
+  { src: "/studio/set-teal.jpg", alt: "Crew at work on a colour-lit set" },
+];
 
 /* ------------------------------------------------------------------ */
 /*  DRAFTED COPY — NOT FROM THE CLIENT DECK                            */
@@ -315,25 +265,35 @@ export type ServiceDetail = {
   /** Page headline. */
   headline: string;
   intro: string;
-  /** What the engagement covers. */
+  /** What the engagement covers, shown as short tags. */
   includes: string[];
-  /** Wide still under the hero. */
+  /** Cover image: the services card and the detail page hero. */
   image: Photo;
-  /** How the work runs, start to finish. */
-  process: { step: string; title: string; desc: string }[];
+  /** Catalogue categories whose projects this page shows. */
+  categories: Category[];
 };
 
 export const servicesPage = {
   eyebrow: "Services",
-  /** DRAFTED — the deck asks only for "a strong opening". */
-  title: "Every Story Needs the Right Hands.",
+  /**
+   * PLACEHOLDER — the client will send a new one-liner for this header
+   * (meeting minutes). Swap it here when it arrives.
+   */
+  title: "From documentary films to brand campaigns, every frame is built with intention.",
   intro:
     "Four disciplines, one studio. We take an idea from the first conversation to the finished piece, and we do it under one roof, so nothing gets lost in the hand-off.",
+  /** Was "Recent Projects" — renamed per the client meeting. */
+  selected: {
+    title: "Selected Projects",
+    intro: "A few pieces we are proud of, across every discipline.",
+  },
+  clients: { title: "Trusted By" },
 };
 
 export const serviceDetails: ServiceDetail[] = [
   {
     slug: "video-film",
+    categories: ["film", "shorts"],
     image: { src: "/studio/interview-setup.jpg", alt: "Interview set lit and framed in the studio" },
     title: "Film & Video Production",
     headline: "From the First Word of a Script to the Final Colour Grade.",
@@ -347,31 +307,10 @@ export const serviceDetails: ServiceDetail[] = [
       "Scripting & storyboarding",
       "Colour grading, sound & post",
     ],
-    process: [
-      {
-        step: "01",
-        title: "Discovery",
-        desc: "We start with the idea and the audience: what needs to be said, and who needs to feel it.",
-      },
-      {
-        step: "02",
-        title: "Pre-production",
-        desc: "Script, storyboard, casting, location, schedule. The work is won or lost here.",
-      },
-      {
-        step: "03",
-        title: "Production",
-        desc: "On set with a crew that knows the plan and can move when the plan changes.",
-      },
-      {
-        step: "04",
-        title: "Post",
-        desc: "Edit, colour, sound, and delivery in every format you need.",
-      },
-    ],
   },
   {
     slug: "photography",
+    categories: ["photography"],
     image: { src: "/studio/photographer.jpg", alt: "Photographer reviewing shots between the seats of a cinema" },
     title: "Photography",
     headline: "Still Images That Carry Weight.",
@@ -385,31 +324,10 @@ export const serviceDetails: ServiceDetail[] = [
       "Art direction & styling",
       "Retouching & delivery",
     ],
-    process: [
-      {
-        step: "01",
-        title: "Brief",
-        desc: "We agree the look, the list, and what each image has to do.",
-      },
-      {
-        step: "02",
-        title: "Direction",
-        desc: "References, styling, and location locked before anyone picks up a camera.",
-      },
-      {
-        step: "03",
-        title: "Shoot",
-        desc: "A calm set and a clear shot list, with room for the frames you can't plan.",
-      },
-      {
-        step: "04",
-        title: "Delivery",
-        desc: "Selected, retouched, and supplied in the crops and formats you'll actually use.",
-      },
-    ],
   },
   {
     slug: "design",
+    categories: ["design"],
     image: { src: "/studio/design-session.jpg", alt: "Team working through ideas around a laptop" },
     title: "Design",
     headline: "Visual Language That Gives Your Brand a Face Worth Remembering.",
@@ -423,31 +341,10 @@ export const serviceDetails: ServiceDetail[] = [
       "Print & editorial layout",
       "Brand guidelines",
     ],
-    process: [
-      {
-        step: "01",
-        title: "Audit",
-        desc: "Where the brand stands today, and what's getting in its way.",
-      },
-      {
-        step: "02",
-        title: "Direction",
-        desc: "Routes explored properly, then narrowed to the one that fits.",
-      },
-      {
-        step: "03",
-        title: "Build",
-        desc: "The identity drawn out across every asset it needs to live on.",
-      },
-      {
-        step: "04",
-        title: "Handover",
-        desc: "Guidelines and files your team can run with without us in the room.",
-      },
-    ],
   },
   {
     slug: "creative-direction",
+    categories: ["strategy"],
     image: { src: "/studio/on-set-red-room.jpg", alt: "Directing a scene on a warmly lit set" },
     title: "Creative Direction & Marketing",
     headline: "We Shape How Your Story Reaches the World.",
@@ -461,40 +358,52 @@ export const serviceDetails: ServiceDetail[] = [
       "Social & influencer campaigns",
       "Measurement & reporting",
     ],
-    process: [
-      {
-        step: "01",
-        title: "Position",
-        desc: "What you stand for, who you're for, and why anyone should care.",
-      },
-      {
-        step: "02",
-        title: "Concept",
-        desc: "The idea the whole campaign hangs on: one line everyone can repeat.",
-      },
-      {
-        step: "03",
-        title: "Produce",
-        desc: "Film, stills, and design made to the concept, not bolted on after.",
-      },
-      {
-        step: "04",
-        title: "Launch",
-        desc: "Rollout, channels, and the reporting that tells you if it worked.",
-      },
-    ],
   },
 ];
 
+/**
+ * Contact page, after the Anakle reference from the client meeting: the
+ * visitor's details first, written as one sentence they fill in, then the
+ * studio's own details for project enquiries.
+ */
 export const contactPage = {
   eyebrow: "Contact",
-  /** DRAFTED — the deck says only "Put information". */
-  title: "You Have a Story. Let's Tell It Right.",
-  intro:
-    "Whether you have a brief or just a feeling, tell us what you're building and we'll help you say it in a way people won't forget.",
+  title: "Let's Talk.",
+  /** Options for the "I'd like to talk about…" blank. */
+  topics: [
+    "Film & Video Production",
+    "Photography",
+    "Design",
+    "Creative Direction & Marketing",
+    "Something else",
+  ],
   /** Only the email and city are confirmed. Phone deliberately omitted. */
   details: [
-    { label: "Email", value: studio.email, href: `mailto:${studio.email}` },
+    { label: "Projects & enquiries", value: studio.email, href: `mailto:${studio.email}` },
     { label: "Studio", value: studio.location, href: null },
   ],
 };
+
+/**
+ * Client logos, in the deck's order. Backgrounds were removed from the
+ * supplied files (public/brandlogos) into public/clients; width and height
+ * are the trimmed PNG's pixel size, used to size each mark optically so a
+ * wide wordmark and a square badge read at the same visual weight.
+ */
+export type Client = { name: string; logo: string; width: number; height: number };
+
+export const clients: Client[] = [
+  { name: "Google", logo: "/clients/google.png", width: 535, height: 177 },
+  { name: "DelYork", logo: "/clients/delyork.png", width: 502, height: 503 },
+  { name: "NFL", logo: "/clients/nfl.png", width: 465, height: 640 },
+  { name: "Africa Finance Corporation", logo: "/clients/afc.png", width: 487, height: 135 },
+  { name: "SEDC", logo: "/clients/sedc.png", width: 474, height: 229 },
+  { name: "Wetalksound", logo: "/clients/wetalksound.png", width: 504, height: 152 },
+  { name: "France in Nigeria", logo: "/clients/france-in-nigeria.png", width: 247, height: 260 },
+  { name: "Yahshud", logo: "/clients/yahshud.png", width: 156, height: 66 },
+  { name: "Hatricks by Tolani", logo: "/clients/hatricks-by-tolani.png", width: 87, height: 91 },
+  { name: "Dashme Foundation", logo: "/clients/dashme-foundation.png", width: 127, height: 162 },
+  { name: "Chance by Drawmax", logo: "/clients/chance-by-drawmax.png", width: 225, height: 225 },
+  { name: "Aproko Doctor Global", logo: "/clients/aproko-doctor-global.png", width: 196, height: 70 },
+  { name: "HerVest", logo: "/clients/hervest.png", width: 500, height: 192 },
+];

@@ -30,7 +30,15 @@ const layout: { span: string; kind: "film" | "still" }[] = [
   { span: "md:col-span-1", kind: "still" },
 ];
 
-export function Work() {
+/**
+ * Homepage defaults; the services page passes its own heading and sets
+ * `contained` so the grid lines up with the rest of that page's column.
+ */
+export function Work({
+  title = home.work.title,
+  intro = home.work.intro,
+  contained = false,
+}: { title?: string; intro?: string; contained?: boolean } = {}) {
   let film = 0;
   let still = 0;
   const tiles = layout.map(({ span, kind }, i) => {
@@ -42,20 +50,26 @@ export function Work() {
   });
 
   return (
-    <section id="work" className="px-4 py-8 md:px-6 md:py-12" aria-labelledby="work-heading">
+    <section
+      id="work"
+      className={contained ? "container-wide py-10 md:py-14" : "px-4 py-8 md:px-6 md:py-12"}
+      aria-labelledby="work-heading"
+    >
       <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2">
         <h2 id="work-heading" className="headline flex items-center gap-3 text-2xl md:text-3xl">
           <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 bg-accent" />
-          {home.work.title}
+          {title}
         </h2>
         <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
-          {home.work.intro}
+          {intro}
         </p>
       </div>
 
       {/* Full-width bento: each row is a quarter of the viewport tall, so a
           single cell is square and a double cell is 2:1 */}
-      <div className="mt-6 grid grid-cols-2 gap-3 md:mt-8 md:auto-rows-[24vw] md:grid-cols-4 md:gap-4">
+      <div className={`mt-6 grid grid-cols-2 gap-3 md:mt-8 md:grid-cols-4 ${
+          contained ? "md:auto-rows-[clamp(180px,20vw,290px)]" : "md:auto-rows-[24vw]"
+        } md:gap-4`}>
         {tiles.map(({ work, span, key }) => (
           <div
             key={key}

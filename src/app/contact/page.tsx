@@ -1,61 +1,64 @@
 import type { Metadata } from "next";
-import { ContactForm } from "../../components/ContactForm";
+import { ContactSentenceForm } from "../../components/ContactSentenceForm";
 import { contactPage, footer } from "../../data/copy";
 
 export const metadata: Metadata = {
-  title: "Start a Project | TFA Studios",
-  description: contactPage.intro,
+  title: "Contact | TFA Studios",
+  description:
+    "Tell TFA Studios about your project: film, photography, design, or creative direction. Lagos, Nigeria.",
 };
 
+/**
+ * Two parts, in the order the client asked for: room for the visitor's own
+ * details first, then the studio's details for project enquiries.
+ */
 export default function ContactPage() {
   return (
     <main>
+      {/* The visitor */}
       <section className="pt-32 pb-12 md:pt-40 md:pb-16">
         <div className="container-wide">
           <p className="text-xs uppercase tracking-[0.3em] text-accent">
             {contactPage.eyebrow}
           </p>
-          <h1 className="headline rise-in mt-6 text-[clamp(2.25rem,7vw,6.5rem)] font-medium">
+          <h1 className="headline rise-in mt-5 text-[clamp(3rem,10vw,8rem)] font-medium">
             {contactPage.title}
           </h1>
-          <p className="mt-10 max-w-2xl border-t border-border pt-8 text-base leading-relaxed text-muted md:text-lg">
-            {contactPage.intro}
-          </p>
+          <div className="mt-10 max-w-4xl md:mt-12">
+            <ContactSentenceForm />
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-border py-16 md:py-20">
+      {/* The studio */}
+      <section className="border-t border-border py-10 md:py-14" aria-label="Studio details">
         <div className="container-wide">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-            {/* Details */}
-            <div className="md:col-span-4">
-              <dl>
-                {contactPage.details.map((d) => (
-                  <div key={d.label} className="border-t border-border py-5">
-                    <dt className="text-[10px] uppercase tracking-[0.3em] text-muted">
-                      {d.label}
-                    </dt>
-                    <dd className="mt-2 text-lg">
-                      {d.href ? (
-                        <a
-                          href={d.href}
-                          className="underline-offset-4 transition-colors hover:text-accent hover:underline"
-                        >
-                          {d.value}
-                        </a>
-                      ) : (
-                        d.value
-                      )}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className="mt-10">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-muted">
-                  Follow
-                </p>
-                <ul className="mt-4 space-y-2">
+          <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {contactPage.details.map((d) => (
+              <div key={d.label}>
+                <dt className="text-[10px] uppercase tracking-[0.3em] text-muted">
+                  {d.label}
+                </dt>
+                <dd className="mt-2 font-serif-editorial text-xl md:text-2xl">
+                  {d.href ? (
+                    <a
+                      href={d.href}
+                      className="italic underline-offset-4 transition-colors hover:text-accent hover:underline"
+                    >
+                      {d.value}
+                    </a>
+                  ) : (
+                    d.value
+                  )}
+                </dd>
+              </div>
+            ))}
+            <div>
+              <dt className="text-[10px] uppercase tracking-[0.3em] text-muted">
+                Follow
+              </dt>
+              <dd className="mt-3">
+                <ul className="flex flex-wrap gap-x-5 gap-y-2">
                   {footer.social.map((s) => (
                     <li key={s.label}>
                       <a
@@ -69,14 +72,9 @@ export default function ContactPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </dd>
             </div>
-
-            {/* Form */}
-            <div className="md:col-span-8">
-              <ContactForm />
-            </div>
-          </div>
+          </dl>
         </div>
       </section>
     </main>
